@@ -1,3 +1,6 @@
-down-the-rabbit-hole
+r-basics
+introduction
+operators
+variables
 the-pool-of-tears
 a-caucus-race-and-a-long-tale

@@ -11,9 +11,9 @@ site: bookdown::bookdown_site
 
 ### Operators
 
-![R Operators](images/Screenshot 2024-07-15 at 9.08.13 PM.png)
+![R Operators](images/mathfunctions.png)
 
-![Math Functions](images/Screenshot 2024-07-15 at 9.08.46 PM.png)
+![Math Functions](images/operators.png)
 
 ### Variables
 
