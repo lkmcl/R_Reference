@@ -1,9 +1,36 @@
---- 
+---
 title: "R Reference Manual"
 author: "Logan McLaurin"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# R Basics
 
+## Introduction
+
+### Operators
+
+![R Operators](images/Screenshot 2024-07-15 at 9.08.13 PM.png)
+
+![Math Functions](images/Screenshot 2024-07-15 at 9.08.46 PM.png)
+
+### Variables
+
+-   **vector:** a collection of values, created by using R's "combine" function c()
+
+-   **numeric:** Numbers including floating point and integer values
+
+-   **integer:** integer variables, whole number values having no fractional part
+
+    -   Often suffixed with L, var \<- 10L
+
+-   **complex:** complex numbers
+
+    -   var \<- 9 + 3i
+
+-   **character:** variables made up of strings (not a datatype itself)
+
+    -   any quotes are fine
+
+-   **logical**
