@@ -23,7 +23,7 @@
 <meta name="author" content="Logan McLaurin" />
 
 
-<meta name="date" content="2024-07-15" />
+<meta name="date" content="2024-07-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 
-<link rel="next" href="the-pool-of-tears.html"/>
+<link rel="next" href="tidyverse.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,6 +54,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -83,9 +147,92 @@
 <li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.1</b> Operators</a></li>
 <li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#variables"><i class="fa fa-check"></i><b>1.1.2</b> Variables</a></li>
 </ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#characters"><i class="fa fa-check"></i><b>1.2</b> Characters</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#paste-function"><i class="fa fa-check"></i><b>1.2.1</b> Paste function</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#other-character-functions"><i class="fa fa-check"></i><b>1.2.2</b> Other character functions</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
-<li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#lists"><i class="fa fa-check"></i><b>1.3</b> Lists</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#factors"><i class="fa fa-check"></i><b>1.4</b> Factors</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#matrices"><i class="fa fa-check"></i><b>1.5</b> Matrices</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#dataframe"><i class="fa fa-check"></i><b>1.6</b> Dataframe</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#conditionals"><i class="fa fa-check"></i><b>1.7</b> Conditionals</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loops"><i class="fa fa-check"></i><b>1.8</b> Loops</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#functions"><i class="fa fa-check"></i><b>1.9</b> Functions</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#practice-problems"><i class="fa fa-check"></i><b>1.10</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="index.html"><a href="index.html#list-practice"><i class="fa fa-check"></i><b>1.10.1</b> List Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i><b>2</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tidyverse.html"><a href="tidyverse.html#cheat-sheets"><i class="fa fa-check"></i><b>2.1</b> Cheat Sheets</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="tidyverse.html"><a href="tidyverse.html#dplyr-data-manipulation"><i class="fa fa-check"></i><b>2.1.1</b> dplyr: data manipulation</a></li>
+<li class="chapter" data-level="2.1.2" data-path="tidyverse.html"><a href="tidyverse.html#forcats-categorical"><i class="fa fa-check"></i><b>2.1.2</b> forcats: categorical</a></li>
+<li class="chapter" data-level="2.1.3" data-path="tidyverse.html"><a href="tidyverse.html#ggplot2-visualization"><i class="fa fa-check"></i><b>2.1.3</b> ggplot2: visualization</a></li>
+<li class="chapter" data-level="2.1.4" data-path="tidyverse.html"><a href="tidyverse.html#lubridate-datetimes"><i class="fa fa-check"></i><b>2.1.4</b> lubridate: datetimes</a></li>
+<li class="chapter" data-level="2.1.5" data-path="tidyverse.html"><a href="tidyverse.html#purrr-functions-and-vectors"><i class="fa fa-check"></i><b>2.1.5</b> purrr: functions and vectors</a></li>
+<li class="chapter" data-level="2.1.6" data-path="tidyverse.html"><a href="tidyverse.html#readr-reading"><i class="fa fa-check"></i><b>2.1.6</b> readr: reading</a></li>
+<li class="chapter" data-level="2.1.7" data-path="tidyverse.html"><a href="tidyverse.html#stringr-strings"><i class="fa fa-check"></i><b>2.1.7</b> stringr: strings</a></li>
+<li class="chapter" data-level="2.1.8" data-path="tidyverse.html"><a href="tidyverse.html#tidyr-data-wrangling"><i class="fa fa-check"></i><b>2.1.8</b> tidyr: data wrangling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="tidyverse.html"><a href="tidyverse.html#basics"><i class="fa fa-check"></i><b>2.2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="tidyverse.html"><a href="tidyverse.html#tidy-data"><i class="fa fa-check"></i><b>2.2.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="tidyverse.html"><a href="tidyverse.html#pivot"><i class="fa fa-check"></i><b>2.2.2</b> Pivot</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tidyverse.html"><a href="tidyverse.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tidyverse.html"><a href="tidyverse.html#rows"><i class="fa fa-check"></i><b>2.3.1</b> Rows</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tidyverse.html"><a href="tidyverse.html#columns"><i class="fa fa-check"></i><b>2.3.2</b> Columns</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tidyverse.html"><a href="tidyverse.html#grouping"><i class="fa fa-check"></i><b>2.3.3</b> Grouping</a></li>
+<li class="chapter" data-level="2.3.4" data-path="tidyverse.html"><a href="tidyverse.html#section"><i class="fa fa-check"></i><b>2.3.4</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="common-processes.html"><a href="common-processes.html"><i class="fa fa-check"></i><b>3</b> Common Processes</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="common-processes.html"><a href="common-processes.html#change-column-types"><i class="fa fa-check"></i><b>3.1</b> Change Column Types</a></li>
+<li class="chapter" data-level="3.2" data-path="common-processes.html"><a href="common-processes.html#split-a-string-column-into-multiple-columns"><i class="fa fa-check"></i><b>3.2</b> Split a String Column into Multiple Columns</a></li>
+<li class="chapter" data-level="3.3" data-path="common-processes.html"><a href="common-processes.html#drop-a-column"><i class="fa fa-check"></i><b>3.3</b> Drop a Column</a></li>
+<li class="chapter" data-level="3.4" data-path="common-processes.html"><a href="common-processes.html#change-a-column-by-a-condition"><i class="fa fa-check"></i><b>3.4</b> Change a Column by a Condition</a></li>
+<li class="chapter" data-level="3.5" data-path="common-processes.html"><a href="common-processes.html#change-a-column-by-multiple-conditions"><i class="fa fa-check"></i><b>3.5</b> Change a Column by Multiple Conditions</a></li>
+<li class="chapter" data-level="3.6" data-path="common-processes.html"><a href="common-processes.html#split-a-dataset-into-training-and-testing"><i class="fa fa-check"></i><b>3.6</b> Split a Dataset into Training and Testing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions-1.html"><a href="functions-1.html"><i class="fa fa-check"></i><b>4</b> Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="functions-1.html"><a href="functions-1.html#data-manipulation-functions"><i class="fa fa-check"></i><b>4.1</b> Data Manipulation Functions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="functions-1.html"><a href="functions-1.html#across"><i class="fa fa-check"></i><b>4.1.1</b> <code>across()</code></a></li>
+<li class="chapter" data-level="4.1.2" data-path="functions-1.html"><a href="functions-1.html#mutate"><i class="fa fa-check"></i><b>4.1.2</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="4.1.3" data-path="functions-1.html"><a href="functions-1.html#if_else"><i class="fa fa-check"></i><b>4.1.3</b> <code>if_else()</code></a></li>
+<li class="chapter" data-level="4.1.4" data-path="functions-1.html"><a href="functions-1.html#case_when"><i class="fa fa-check"></i><b>4.1.4</b> <code>case_when()</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="functions-1.html"><a href="functions-1.html#seperate_longer_delim"><i class="fa fa-check"></i><b>4.1.5</b> <code>seperate_longer_delim()</code></a></li>
+<li class="chapter" data-level="4.1.6" data-path="functions-1.html"><a href="functions-1.html#seperate_wider_delim"><i class="fa fa-check"></i><b>4.1.6</b> <code>seperate_wider_delim()</code></a></li>
+<li class="chapter" data-level="4.1.7" data-path="functions-1.html"><a href="functions-1.html#na_if"><i class="fa fa-check"></i><b>4.1.7</b> <code>na_if()</code></a></li>
+<li class="chapter" data-level="4.1.8" data-path="functions-1.html"><a href="functions-1.html#grepl"><i class="fa fa-check"></i><b>4.1.8</b> <code>grepl()</code></a></li>
+<li class="chapter" data-level="4.1.9" data-path="functions-1.html"><a href="functions-1.html#str_replace_all-or-str_replace"><i class="fa fa-check"></i><b>4.1.9</b> <code>str_replace_all()</code> or <code>str_replace()</code></a></li>
+<li class="chapter" data-level="4.1.10" data-path="functions-1.html"><a href="functions-1.html#str_to_title-str_to_upper-str_to_lower-and-str_to_sentence"><i class="fa fa-check"></i><b>4.1.10</b> <code>str_to_title()</code>, <code>str_to_upper()</code>, <code>str_to_lower()</code>, and <code>str_to_sentence()</code></a></li>
+<li class="chapter" data-level="4.1.11" data-path="functions-1.html"><a href="functions-1.html#str_squish-or-str_trim"><i class="fa fa-check"></i><b>4.1.11</b> <code>str_squish()</code> or <code>str_trim()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="functions-1.html"><a href="functions-1.html#time"><i class="fa fa-check"></i><b>4.2</b> Time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="functions-1.html"><a href="functions-1.html#mdy"><i class="fa fa-check"></i><b>4.2.1</b> <code>mdy()</code></a></li>
+<li class="chapter" data-level="4.2.2" data-path="functions-1.html"><a href="functions-1.html#day-month-or-year"><i class="fa fa-check"></i><b>4.2.2</b> <code>day()</code>, <code>month()</code>, or <code>year()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="misc..html"><a href="misc..html"><i class="fa fa-check"></i><b>5</b> Misc.</a></li>
+<li class="chapter" data-level="6" data-path="practice-problems-1.html"><a href="practice-problems-1.html"><i class="fa fa-check"></i><b>6</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="practice-problems-1.html"><a href="practice-problems-1.html#r-project-redone"><i class="fa fa-check"></i><b>6.1</b> R Project Redone</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-2"><i class="fa fa-check"></i><b>6.1.1</b> 1 and 2</a></li>
+<li class="chapter" data-level="6.1.2" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-4"><i class="fa fa-check"></i><b>6.1.2</b> 3 and 4</a></li>
+<li class="chapter" data-level="6.1.3" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-7"><i class="fa fa-check"></i><b>6.1.3</b> 6 and 7</a></li>
+<li class="chapter" data-level="6.1.4" data-path="practice-problems-1.html"><a href="practice-problems-1.html#section-1"><i class="fa fa-check"></i><b>6.1.4</b> 9</a></li>
+<li class="chapter" data-level="6.1.5" data-path="practice-problems-1.html"><a href="practice-problems-1.html#section-2"><i class="fa fa-check"></i><b>6.1.5</b> </a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -108,7 +255,7 @@
 <div id="header">
 <h1 class="title">R Reference Manual</h1>
 <p class="author"><em>Logan McLaurin</em></p>
-<p class="date"><em>2024-07-15</em></p>
+<p class="date"><em>2024-07-18</em></p>
 </div>
 <div id="r-basics" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> R Basics<a href="index.html#r-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -128,7 +275,10 @@
 <div id="variables" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Variables<a href="index.html#variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p><strong>vector:</strong> a collection of values, created by using R’s “combine” function c()</p></li>
+<li><p><strong>vector:</strong> a collection of values, created by using R’s “combine” function c()</p>
+<ul>
+<li>must be same datatype</li>
+</ul></li>
 <li><p><strong>numeric:</strong> Numbers including floating point and integer values</p></li>
 <li><p><strong>integer:</strong> integer variables, whole number values having no fractional part</p>
 <ul>
@@ -144,6 +294,329 @@
 </ul></li>
 <li><p><strong>logical</strong></p></li>
 </ul>
+</div>
+</div>
+<div id="characters" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Characters<a href="index.html#characters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="paste-function" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Paste function<a href="index.html#paste-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>paste(s, t, sep= " ", collapse=null)</code>: concatenate s and t, returning a new character as a result.</p>
+<ul>
+<li><p><code>sep</code> defines character used to separate s and t (default is space)</p></li>
+<li><p><code>collapse</code> is used when s and t are vectors. (<code>NULL</code> concatenates each vector separately)</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="do">## Strings</span></span>
+<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="fu">paste</span>( <span class="st">&quot;hello&quot;</span>, <span class="st">&quot;world!&quot;</span>, <span class="at">sep=</span><span class="st">&quot;.&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;hello.world!&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a><span class="do">## Concatenates elementwise</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span> )</span>
+<span id="cb3-3"><a href="index.html#cb3-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span> )</span>
+<span id="cb3-4"><a href="index.html#cb3-4" tabindex="-1"></a><span class="fu">paste</span>( a, b )</span></code></pre></div>
+<pre><code>## [1] &quot;1 a&quot; &quot;2 b&quot; &quot;3 c&quot;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a><span class="co"># Example collapse which gives a string</span></span>
+<span id="cb5-2"><a href="index.html#cb5-2" tabindex="-1"></a><span class="fu">paste</span>( a, b, <span class="at">collapse=</span><span class="st">&quot;; &quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;1 a; 2 b; 3 c&quot;</code></pre>
+</div>
+<div id="other-character-functions" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Other character functions<a href="index.html#other-character-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>substring(s, i, j)</code> : returns ith through jth character. (s, i) retursn substring from ith until the last character</p>
+<p><code>nchar(s)</code> : number of characters in s</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">&quot;hello world!&quot;</span></span>
+<span id="cb7-2"><a href="index.html#cb7-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">nchar</span>( s ) )</span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">substring</span>( s, <span class="dv">7</span>, <span class="dv">7</span> ) )</span></code></pre></div>
+<pre><code>## [1] &quot;w&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">substring</span>( s, <span class="dv">3</span>, <span class="dv">8</span> ) )</span></code></pre></div>
+<pre><code>## [1] &quot;llo wo&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">substring</span>( s, <span class="dv">4</span> ) )</span></code></pre></div>
+<pre><code>## [1] &quot;lo world!&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">substring</span>( s, <span class="fu">nchar</span>( s ) <span class="sc">-</span> <span class="dv">1</span> ), <span class="fu">nchar</span>( s ) <span class="sc">-</span> <span class="dv">1</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;d!&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">substring</span>( s, <span class="fu">nchar</span>( s ) <span class="sc">-</span> <span class="dv">2</span> ) )</span></code></pre></div>
+<pre><code>## [1] &quot;ld!&quot;</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="st">&quot;must.. try.. harder..&quot;</span></span>
+<span id="cb19-2"><a href="index.html#cb19-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>( s, t ) )</span></code></pre></div>
+<pre><code>## [1] &quot;hello world! must.. try.. harder..&quot;</code></pre>
+</div>
+</div>
+<div id="lists" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Lists<a href="index.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Can take any datatype and include keyed values</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" tabindex="-1"></a>l <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;values&quot;</span><span class="ot">=</span><span class="fu">sin</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), <span class="st">&quot;ids&quot;</span><span class="ot">=</span>letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="st">&quot;sub&quot;</span><span class="ot">=</span><span class="fu">list</span>(<span class="st">&quot;foo&quot;</span><span class="ot">=</span><span class="dv">42</span>,<span class="st">&quot;bar&quot;</span><span class="ot">=</span><span class="dv">13</span>), <span class="st">&quot;greeting&quot;</span><span class="ot">=</span><span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb21-2"><a href="index.html#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="index.html#cb21-3" tabindex="-1"></a><span class="co"># Can return entry wise as a sublist l[1] or as values with l[[1]]</span></span>
+<span id="cb21-4"><a href="index.html#cb21-4" tabindex="-1"></a><span class="fu">print</span>( l[<span class="st">&#39;values&#39;</span>] )</span></code></pre></div>
+<pre><code>## $values
+## [1] 0.8414710 0.9092974 0.1411200</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" tabindex="-1"></a><span class="fu">str</span>(l[<span class="st">&#39;values&#39;</span>])</span></code></pre></div>
+<pre><code>## List of 1
+##  $ values: num [1:3] 0.841 0.909 0.141</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" tabindex="-1"></a><span class="fu">print</span>( l[[<span class="st">&quot;ids&quot;</span>]] )</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" tabindex="-1"></a><span class="fu">print</span>( l<span class="sc">$</span>sub<span class="sc">$</span>foo )</span></code></pre></div>
+<pre><code>## [1] 42</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" tabindex="-1"></a><span class="fu">print</span>( l[[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>)]] )</span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+</div>
+<div id="factors" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Factors<a href="index.html#factors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1" tabindex="-1"></a>city <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb31-2"><a href="index.html#cb31-2" tabindex="-1"></a>city_nm <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;Dublin&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Sofia&quot;</span>, <span class="st">&quot;Ponteverdra&quot;</span> )</span>
+<span id="cb31-3"><a href="index.html#cb31-3" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>( city, <span class="at">labels=</span>city_nm )</span>
+<span id="cb31-4"><a href="index.html#cb31-4" tabindex="-1"></a><span class="fu">print</span>(f)</span></code></pre></div>
+<pre><code>## [1] Sofia       London      Dublin      Ponteverdra Sofia       London     
+## Levels: Dublin London Sofia Ponteverdra</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1" tabindex="-1"></a><span class="do">## Appending factors</span></span>
+<span id="cb33-2"><a href="index.html#cb33-2" tabindex="-1"></a>new_f <span class="ot">&lt;-</span> <span class="fu">append</span>( f, <span class="fu">as.factor</span>( <span class="fu">c</span>( <span class="st">&quot;Zurich&quot;</span>, <span class="st">&quot;Berlin&quot;</span> ) ) )</span>
+<span id="cb33-3"><a href="index.html#cb33-3" tabindex="-1"></a><span class="fu">print</span>(new_f)</span></code></pre></div>
+<pre><code>## [1] Sofia       London      Dublin      Ponteverdra Sofia       London     
+## [7] Zurich      Berlin     
+## Levels: Dublin London Sofia Ponteverdra Berlin Zurich</code></pre>
+</div>
+<div id="matrices" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Matrices<a href="index.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="index.html#cb35-1" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>( <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span> ), <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">ncol=</span><span class="dv">2</span> )</span>
+<span id="cb35-2"><a href="index.html#cb35-2" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6</code></pre>
+<p>Slicing matrix</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="index.html#cb37-1" tabindex="-1"></a><span class="fu">print</span>(mat[<span class="dv">1</span>,<span class="dv">1</span>])</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="index.html#cb39-1" tabindex="-1"></a><span class="fu">print</span>(mat[<span class="dv">2</span>,])</span></code></pre></div>
+<pre><code>## [1] 2 5</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1" tabindex="-1"></a><span class="fu">print</span>(mat[ <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), ])</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    5
+## [2,]    3    6</code></pre>
+<p>Binding rows and columns</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="index.html#cb43-1" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">cbind</span>( mat, <span class="fu">c</span>( <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span> ), <span class="fu">c</span>( <span class="dv">10</span>, <span class="dv">11</span>,<span class="dv">12</span> ) )</span>
+<span id="cb43-2"><a href="index.html#cb43-2" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12</code></pre>
+</div>
+<div id="dataframe" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Dataframe<a href="index.html#dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Column names are non-empty</p></li>
+<li><p>Row names are unique</p></li>
+<li><p>Data in a dataframe is numeric, character, or factor</p></li>
+<li><p>Each column has the same number of values</p></li>
+</ol>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="index.html#cb45-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb45-2"><a href="index.html#cb45-2" tabindex="-1"></a>    emp_id <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>),</span>
+<span id="cb45-3"><a href="index.html#cb45-3" tabindex="-1"></a>    emp_nm <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;Rick&quot;</span>, <span class="st">&quot;Dan&quot;</span>, <span class="st">&quot;Michelle&quot;</span>, <span class="st">&quot;Ryan&quot;</span>, <span class="st">&quot;Gary&quot;</span> ),</span>
+<span id="cb45-4"><a href="index.html#cb45-4" tabindex="-1"></a>    salary <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">623.3</span>, <span class="fl">515.2</span>, <span class="fl">611.0</span>, <span class="fl">729.0</span>, <span class="fl">843.25</span>),</span>
+<span id="cb45-5"><a href="index.html#cb45-5" tabindex="-1"></a>    start_dt <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">&quot;2012-01-01&quot;</span>, <span class="st">&quot;2013-09-23&quot;</span>, <span class="st">&quot;2014-11-15&quot;</span>, <span class="st">&quot;2014-05-11&quot;</span>, <span class="st">&quot;2015-03-27&quot;</span>))</span>
+<span id="cb45-6"><a href="index.html#cb45-6" tabindex="-1"></a>)</span>
+<span id="cb45-7"><a href="index.html#cb45-7" tabindex="-1"></a><span class="fu">print</span>(df)</span></code></pre></div>
+<pre><code>##   emp_id....c.1.5. emp_nm....c..Rick....Dan....Michelle....Ryan....Gary..
+## 1                1                                                   Rick
+## 2                2                                                    Dan
+## 3                3                                               Michelle
+## 4                4                                                   Ryan
+## 5                5                                                   Gary
+##   salary....c.623.3..515.2..611..729..843.25.
+## 1                                      623.30
+## 2                                      515.20
+## 3                                      611.00
+## 4                                      729.00
+## 5                                      843.25
+##   start_dt....as.Date.c..2012.01.01....2013.09.23....2014.11.15...
+## 1                                                       2012-01-01
+## 2                                                       2013-09-23
+## 3                                                       2014-11-15
+## 4                                                       2014-05-11
+## 5                                                       2015-03-27</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="index.html#cb47-1" tabindex="-1"></a><span class="fu">str</span>(df)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  4 variables:
+##  $ emp_id....c.1.5.                                                : int  1 2 3 4 5
+##  $ emp_nm....c..Rick....Dan....Michelle....Ryan....Gary..          : chr  &quot;Rick&quot; &quot;Dan&quot; &quot;Michelle&quot; &quot;Ryan&quot; ...
+##  $ salary....c.623.3..515.2..611..729..843.25.                     : num  623 515 611 729 843
+##  $ start_dt....as.Date.c..2012.01.01....2013.09.23....2014.11.15...: Date, format: &quot;2012-01-01&quot; &quot;2013-09-23&quot; ...</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="index.html#cb49-1" tabindex="-1"></a><span class="do">## Use the summary function</span></span>
+<span id="cb49-2"><a href="index.html#cb49-2" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code></pre></div>
+<pre><code>##  emp_id....c.1.5. emp_nm....c..Rick....Dan....Michelle....Ryan....Gary..
+##  Min.   :1        Length:5                                              
+##  1st Qu.:2        Class :character                                      
+##  Median :3        Mode  :character                                      
+##  Mean   :3                                                              
+##  3rd Qu.:4                                                              
+##  Max.   :5                                                              
+##  salary....c.623.3..515.2..611..729..843.25.
+##  Min.   :515.2                              
+##  1st Qu.:611.0                              
+##  Median :623.3                              
+##  Mean   :664.4                              
+##  3rd Qu.:729.0                              
+##  Max.   :843.2                              
+##  start_dt....as.Date.c..2012.01.01....2013.09.23....2014.11.15...
+##  Min.   :2012-01-01                                              
+##  1st Qu.:2013-09-23                                              
+##  Median :2014-05-11                                              
+##  Mean   :2014-01-14                                              
+##  3rd Qu.:2014-11-15                                              
+##  Max.   :2015-03-27</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="index.html#cb51-1" tabindex="-1"></a>dept_c <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;HR&quot;</span> )</span>
+<span id="cb51-2"><a href="index.html#cb51-2" tabindex="-1"></a>vacn_c <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;Jun&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Oct&quot;</span>, <span class="st">&quot;Mar&quot;</span> )</span>
+<span id="cb51-3"><a href="index.html#cb51-3" tabindex="-1"></a><span class="fu">length</span>( dept_c ) <span class="ot">&lt;-</span> <span class="fu">nrow</span>( df )</span>
+<span id="cb51-4"><a href="index.html#cb51-4" tabindex="-1"></a><span class="fu">length</span>( vacn_c ) <span class="ot">&lt;-</span> <span class="fu">nrow</span>( df )</span>
+<span id="cb51-5"><a href="index.html#cb51-5" tabindex="-1"></a>df<span class="sc">$</span>dept <span class="ot">&lt;-</span> dept_c</span>
+<span id="cb51-6"><a href="index.html#cb51-6" tabindex="-1"></a>df<span class="sc">$</span>vacation <span class="ot">&lt;-</span> vacn_c</span>
+<span id="cb51-7"><a href="index.html#cb51-7" tabindex="-1"></a><span class="fu">print</span>(df)</span></code></pre></div>
+<pre><code>##   emp_id....c.1.5. emp_nm....c..Rick....Dan....Michelle....Ryan....Gary..
+## 1                1                                                   Rick
+## 2                2                                                    Dan
+## 3                3                                               Michelle
+## 4                4                                                   Ryan
+## 5                5                                                   Gary
+##   salary....c.623.3..515.2..611..729..843.25.
+## 1                                      623.30
+## 2                                      515.20
+## 3                                      611.00
+## 4                                      729.00
+## 5                                      843.25
+##   start_dt....as.Date.c..2012.01.01....2013.09.23....2014.11.15...    dept
+## 1                                                       2012-01-01      IT
+## 2                                                       2013-09-23 Finance
+## 3                                                       2014-11-15      HR
+## 4                                                       2014-05-11    &lt;NA&gt;
+## 5                                                       2015-03-27    &lt;NA&gt;
+##   vacation
+## 1      Jun
+## 2      Jan
+## 3      May
+## 4      Dec
+## 5      Oct</code></pre>
+<p>Beware of concatenating things of different lengths</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="index.html#cb53-1" tabindex="-1"></a>dept_c <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;HR&quot;</span> )</span>
+<span id="cb53-2"><a href="index.html#cb53-2" tabindex="-1"></a>vacn_c <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;Jun&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Oct&quot;</span>, <span class="st">&quot;Mar&quot;</span> )</span>
+<span id="cb53-3"><a href="index.html#cb53-3" tabindex="-1"></a><span class="fu">length</span>( dept_c ) <span class="ot">&lt;-</span> <span class="fu">nrow</span>( df )</span>
+<span id="cb53-4"><a href="index.html#cb53-4" tabindex="-1"></a><span class="fu">length</span>( vacn_c ) <span class="ot">&lt;-</span> <span class="fu">nrow</span>( df )</span>
+<span id="cb53-5"><a href="index.html#cb53-5" tabindex="-1"></a>df<span class="sc">$</span>dept <span class="ot">&lt;-</span> dept_c</span>
+<span id="cb53-6"><a href="index.html#cb53-6" tabindex="-1"></a>df<span class="sc">$</span>vacation <span class="ot">&lt;-</span> vacn_c</span>
+<span id="cb53-7"><a href="index.html#cb53-7" tabindex="-1"></a><span class="fu">print</span>(df)</span></code></pre></div>
+<pre><code>##   emp_id....c.1.5. emp_nm....c..Rick....Dan....Michelle....Ryan....Gary..
+## 1                1                                                   Rick
+## 2                2                                                    Dan
+## 3                3                                               Michelle
+## 4                4                                                   Ryan
+## 5                5                                                   Gary
+##   salary....c.623.3..515.2..611..729..843.25.
+## 1                                      623.30
+## 2                                      515.20
+## 3                                      611.00
+## 4                                      729.00
+## 5                                      843.25
+##   start_dt....as.Date.c..2012.01.01....2013.09.23....2014.11.15...    dept
+## 1                                                       2012-01-01      IT
+## 2                                                       2013-09-23 Finance
+## 3                                                       2014-11-15      HR
+## 4                                                       2014-05-11    &lt;NA&gt;
+## 5                                                       2015-03-27    &lt;NA&gt;
+##   vacation
+## 1      Jun
+## 2      Jan
+## 3      May
+## 4      Dec
+## 5      Oct</code></pre>
+</div>
+<div id="conditionals" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Conditionals<a href="index.html#conditionals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="index.html#cb55-1" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="dv">75</span></span>
+<span id="cb55-2"><a href="index.html#cb55-2" tabindex="-1"></a><span class="cf">if</span> ( grade <span class="sc">&gt;=</span> <span class="dv">90</span> ) {</span>
+<span id="cb55-3"><a href="index.html#cb55-3" tabindex="-1"></a>    passed <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb55-4"><a href="index.html#cb55-4" tabindex="-1"></a>    letter <span class="ot">&lt;-</span> <span class="st">&#39;A&#39;</span></span>
+<span id="cb55-5"><a href="index.html#cb55-5" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> ( grade <span class="sc">&gt;=</span> <span class="dv">80</span> ) {</span>
+<span id="cb55-6"><a href="index.html#cb55-6" tabindex="-1"></a>    passed <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb55-7"><a href="index.html#cb55-7" tabindex="-1"></a>    letter <span class="ot">&lt;-</span> <span class="st">&#39;B&#39;</span></span>
+<span id="cb55-8"><a href="index.html#cb55-8" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> ( grade <span class="sc">&gt;=</span> <span class="dv">65</span> ) {</span>
+<span id="cb55-9"><a href="index.html#cb55-9" tabindex="-1"></a>    passed <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb55-10"><a href="index.html#cb55-10" tabindex="-1"></a>    letter <span class="ot">&lt;-</span> <span class="st">&#39;C&#39;</span></span>
+<span id="cb55-11"><a href="index.html#cb55-11" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> ( grade <span class="sc">&gt;=</span> <span class="dv">50</span> ) {</span>
+<span id="cb55-12"><a href="index.html#cb55-12" tabindex="-1"></a>    passed <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb55-13"><a href="index.html#cb55-13" tabindex="-1"></a>    letter <span class="ot">&lt;-</span> <span class="st">&#39;D&#39;</span></span>
+<span id="cb55-14"><a href="index.html#cb55-14" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb55-15"><a href="index.html#cb55-15" tabindex="-1"></a>    passed <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb55-16"><a href="index.html#cb55-16" tabindex="-1"></a>    letter <span class="ot">&lt;-</span> <span class="st">&#39;F&#39;</span></span>
+<span id="cb55-17"><a href="index.html#cb55-17" tabindex="-1"></a>}</span>
+<span id="cb55-18"><a href="index.html#cb55-18" tabindex="-1"></a><span class="fu">print</span>( passed )</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="index.html#cb57-1" tabindex="-1"></a><span class="fu">print</span>( letter )</span></code></pre></div>
+<pre><code>## [1] &quot;C&quot;</code></pre>
+</div>
+<div id="loops" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Loops<a href="index.html#loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While Loop</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="index.html#cb59-1" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb59-2"><a href="index.html#cb59-2" tabindex="-1"></a><span class="cf">while</span> ( i <span class="sc">&lt;=</span> <span class="dv">15</span> ) {</span>
+<span id="cb59-3"><a href="index.html#cb59-3" tabindex="-1"></a>    <span class="fu">print</span>( <span class="fu">paste</span>( <span class="st">&quot;The square root of&quot;</span>, i, <span class="st">&quot;is&quot;</span>, <span class="fu">sqrt</span>( i ) ) )</span>
+<span id="cb59-4"><a href="index.html#cb59-4" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb59-5"><a href="index.html#cb59-5" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;The square root of 1 is 1&quot;
+## [1] &quot;The square root of 2 is 1.4142135623731&quot;
+## [1] &quot;The square root of 3 is 1.73205080756888&quot;
+## [1] &quot;The square root of 4 is 2&quot;
+## [1] &quot;The square root of 5 is 2.23606797749979&quot;
+## [1] &quot;The square root of 6 is 2.44948974278318&quot;
+## [1] &quot;The square root of 7 is 2.64575131106459&quot;
+## [1] &quot;The square root of 8 is 2.82842712474619&quot;
+## [1] &quot;The square root of 9 is 3&quot;
+## [1] &quot;The square root of 10 is 3.16227766016838&quot;
+## [1] &quot;The square root of 11 is 3.3166247903554&quot;
+## [1] &quot;The square root of 12 is 3.46410161513775&quot;
+## [1] &quot;The square root of 13 is 3.60555127546399&quot;
+## [1] &quot;The square root of 14 is 3.74165738677394&quot;
+## [1] &quot;The square root of 15 is 3.87298334620742&quot;</code></pre>
+<p>For loop:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="index.html#cb61-1" tabindex="-1"></a>fruit <span class="ot">&lt;-</span> <span class="fu">list</span>( <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span> )</span>
+<span id="cb61-2"><a href="index.html#cb61-2" tabindex="-1"></a><span class="cf">for</span> ( nm <span class="cf">in</span> fruit ) {</span>
+<span id="cb61-3"><a href="index.html#cb61-3" tabindex="-1"></a>    <span class="fu">print</span>( <span class="fu">paste</span>( nm, <span class="st">&#39;(&#39;</span>, <span class="fu">nchar</span>( nm ), <span class="st">&#39;)&#39;</span> ) )</span>
+<span id="cb61-4"><a href="index.html#cb61-4" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;apple ( 5 )&quot;
+## [1] &quot;banana ( 6 )&quot;
+## [1] &quot;cherry ( 6 )&quot;</code></pre>
+<ul>
+<li><p><code>break</code> and <code>next</code> are using for stopping loop operations.</p></li>
+<li><p><code>seq</code> function has (start, stop, interval)</p></li>
+</ul>
+</div>
+<div id="functions" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Functions<a href="index.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="index.html#cb63-1" tabindex="-1"></a>max_val <span class="ot">&lt;-</span> <span class="cf">function</span>( num_l ) {</span>
+<span id="cb63-2"><a href="index.html#cb63-2" tabindex="-1"></a>    <span class="cf">if</span> ( <span class="fu">length</span>( num_l ) <span class="sc">&lt;=</span> <span class="dv">0</span> ) {</span>
+<span id="cb63-3"><a href="index.html#cb63-3" tabindex="-1"></a>        <span class="fu">return</span>( <span class="cn">NULL</span> )</span>
+<span id="cb63-4"><a href="index.html#cb63-4" tabindex="-1"></a>    }</span>
+<span id="cb63-5"><a href="index.html#cb63-5" tabindex="-1"></a>    max_v <span class="ot">&lt;-</span> num_l[[<span class="dv">1</span>]]</span>
+<span id="cb63-6"><a href="index.html#cb63-6" tabindex="-1"></a>    <span class="cf">for</span> ( elem <span class="cf">in</span> num_l ) {</span>
+<span id="cb63-7"><a href="index.html#cb63-7" tabindex="-1"></a>        <span class="cf">if</span> ( elem <span class="sc">&gt;</span> max_v ) {</span>
+<span id="cb63-8"><a href="index.html#cb63-8" tabindex="-1"></a>            max_v <span class="ot">&lt;-</span> elem</span>
+<span id="cb63-9"><a href="index.html#cb63-9" tabindex="-1"></a>        }</span>
+<span id="cb63-10"><a href="index.html#cb63-10" tabindex="-1"></a>    }</span>
+<span id="cb63-11"><a href="index.html#cb63-11" tabindex="-1"></a>    <span class="fu">return</span>( max_v )</span>
+<span id="cb63-12"><a href="index.html#cb63-12" tabindex="-1"></a>}</span>
+<span id="cb63-13"><a href="index.html#cb63-13" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="index.html#cb63-14" tabindex="-1"></a><span class="fu">max_val</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">44</span>, <span class="dv">23</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">333</span>, <span class="sc">-</span><span class="dv">343</span>))</span></code></pre></div>
+<pre><code>## [1] 333</code></pre>
+</div>
+<div id="practice-problems" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> Practice Problems<a href="index.html#practice-problems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="list-practice" class="section level3 hasAnchor" number="1.10.1">
+<h3><span class="header-section-number">1.10.1</span> List Practice<a href="index.html#list-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="index.html#cb65-1" tabindex="-1"></a>db <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">beaver =</span> <span class="st">&quot;colony&quot;</span>, <span class="at">crow =</span> <span class="st">&quot;murder&quot;</span>, <span class="at">parrot =</span> <span class="st">&quot;pandemonium&quot;</span>, <span class="at">porcupine =</span> <span class="st">&quot;prickle&quot;</span>)</span>
+<span id="cb65-2"><a href="index.html#cb65-2" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="index.html#cb65-3" tabindex="-1"></a><span class="cf">for</span> (animal <span class="cf">in</span> <span class="fu">names</span>(db)){</span>
+<span id="cb65-4"><a href="index.html#cb65-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(animal, <span class="st">&quot;:&quot;</span>, db[[animal]]))</span>
+<span id="cb65-5"><a href="index.html#cb65-5" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;beaver : colony&quot;
+## [1] &quot;crow : murder&quot;
+## [1] &quot;parrot : pandemonium&quot;
+## [1] &quot;porcupine : prickle&quot;</code></pre>
 
 </div>
 </div>
@@ -154,7 +627,7 @@
         </div>
       </div>
 
-<a href="the-pool-of-tears.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tidyverse.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

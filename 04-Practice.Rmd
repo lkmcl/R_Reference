@@ -1,0 +1,71 @@
+# Practice Problems
+
+## R Project Redone
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+library(tidyverse)
+data <- read.csv(file = "~/Downloads/project_data_file.csv")
+print(data)
+```
+
+### 1 and 2
+
+Create a new column called Birth_Month which has only the month portion of Birth_Month_Year. Create a new column called Birth_Year which has only the year portion of Birth_Month_Year.
+
+```{r}
+data_alt <- data %>%
+  separate_wider_delim(Birth_Month_Year, delim=",", names = c("Birth_Month", "Birth_Year"))
+
+print(data_alt)
+```
+
+### 3 and 4
+
+Since the birth month and birth year were open ended fields, there are many inconsistencies in the data. Standardize the values for Birth_Month and Birth_Year. Show the five most frequent birth months, and the five least frequent birth months.
+
+```{r}
+data_alt2 <- data_alt %>%
+  
+  mutate(Birth_Month = case_when(
+    Birth_Month == "7" ~ "July",
+    Birth_Month == "11" ~ "November",
+    Birth_Month == "9" ~ "September",
+    .default = Birth_Month)) %>%
+  
+  mutate(Birth_Month = str_to_title(str_trim(Birth_Month))) %>%
+  
+  mutate(Birth_Year = as.numeric(str_trim(Birth_Year)))
+
+print(data_alt2)
+```
+
+```{r}
+data_alt2 %>% count(Birth_Month, sort = TRUE) %>% head(5)
+data_alt2 %>% count(Birth_Month, sort = TRUE) %>% tail(5)
+
+data_alt2 %>% count(Birth_Year, sort = TRUE) %>% head(5)
+data_alt2 %>% count(Birth_Year, sort = TRUE) %>% tail(5)
+```
+
+### 6 and 7
+
+```{r}
+data_alt3 <- data_alt2 %>%
+  mutate(State = ifelse(State %in% state.name,State,NA))
+
+print(data_alt3)
+```
+
+### 9
+
+```{r}
+data_alt4 <- data_alt3 %>%
+  rowwise() %>%
+  mutate(How_Hear_About_Program = substring(How_Hear_About_Program, 4, nchar(How_Hear_About_Program))) %>%
+           ungroup()
+
+print(data_alt4)
+```
+
+### 

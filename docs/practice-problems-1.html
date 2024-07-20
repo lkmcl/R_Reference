@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Practice Problems | R Reference Manual</title>
+  <meta name="description" content="Chapter 6 Practice Problems | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Practice Problems | R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Practice Problems | R Reference Manual" />
+  
+  
+  
+
+<meta name="author" content="Logan McLaurin" />
+
+
+<meta name="date" content="2024-07-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="misc..html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R Basics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.1</b> Operators</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#variables"><i class="fa fa-check"></i><b>1.1.2</b> Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#characters"><i class="fa fa-check"></i><b>1.2</b> Characters</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#paste-function"><i class="fa fa-check"></i><b>1.2.1</b> Paste function</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#other-character-functions"><i class="fa fa-check"></i><b>1.2.2</b> Other character functions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#lists"><i class="fa fa-check"></i><b>1.3</b> Lists</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#factors"><i class="fa fa-check"></i><b>1.4</b> Factors</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#matrices"><i class="fa fa-check"></i><b>1.5</b> Matrices</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#dataframe"><i class="fa fa-check"></i><b>1.6</b> Dataframe</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#conditionals"><i class="fa fa-check"></i><b>1.7</b> Conditionals</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loops"><i class="fa fa-check"></i><b>1.8</b> Loops</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#functions"><i class="fa fa-check"></i><b>1.9</b> Functions</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#practice-problems"><i class="fa fa-check"></i><b>1.10</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="index.html"><a href="index.html#list-practice"><i class="fa fa-check"></i><b>1.10.1</b> List Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i><b>2</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tidyverse.html"><a href="tidyverse.html#cheat-sheets"><i class="fa fa-check"></i><b>2.1</b> Cheat Sheets</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="tidyverse.html"><a href="tidyverse.html#dplyr-data-manipulation"><i class="fa fa-check"></i><b>2.1.1</b> dplyr: data manipulation</a></li>
+<li class="chapter" data-level="2.1.2" data-path="tidyverse.html"><a href="tidyverse.html#forcats-categorical"><i class="fa fa-check"></i><b>2.1.2</b> forcats: categorical</a></li>
+<li class="chapter" data-level="2.1.3" data-path="tidyverse.html"><a href="tidyverse.html#ggplot2-visualization"><i class="fa fa-check"></i><b>2.1.3</b> ggplot2: visualization</a></li>
+<li class="chapter" data-level="2.1.4" data-path="tidyverse.html"><a href="tidyverse.html#lubridate-datetimes"><i class="fa fa-check"></i><b>2.1.4</b> lubridate: datetimes</a></li>
+<li class="chapter" data-level="2.1.5" data-path="tidyverse.html"><a href="tidyverse.html#purrr-functions-and-vectors"><i class="fa fa-check"></i><b>2.1.5</b> purrr: functions and vectors</a></li>
+<li class="chapter" data-level="2.1.6" data-path="tidyverse.html"><a href="tidyverse.html#readr-reading"><i class="fa fa-check"></i><b>2.1.6</b> readr: reading</a></li>
+<li class="chapter" data-level="2.1.7" data-path="tidyverse.html"><a href="tidyverse.html#stringr-strings"><i class="fa fa-check"></i><b>2.1.7</b> stringr: strings</a></li>
+<li class="chapter" data-level="2.1.8" data-path="tidyverse.html"><a href="tidyverse.html#tidyr-data-wrangling"><i class="fa fa-check"></i><b>2.1.8</b> tidyr: data wrangling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="tidyverse.html"><a href="tidyverse.html#basics"><i class="fa fa-check"></i><b>2.2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="tidyverse.html"><a href="tidyverse.html#tidy-data"><i class="fa fa-check"></i><b>2.2.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="tidyverse.html"><a href="tidyverse.html#pivot"><i class="fa fa-check"></i><b>2.2.2</b> Pivot</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tidyverse.html"><a href="tidyverse.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tidyverse.html"><a href="tidyverse.html#rows"><i class="fa fa-check"></i><b>2.3.1</b> Rows</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tidyverse.html"><a href="tidyverse.html#columns"><i class="fa fa-check"></i><b>2.3.2</b> Columns</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tidyverse.html"><a href="tidyverse.html#grouping"><i class="fa fa-check"></i><b>2.3.3</b> Grouping</a></li>
+<li class="chapter" data-level="2.3.4" data-path="tidyverse.html"><a href="tidyverse.html#section"><i class="fa fa-check"></i><b>2.3.4</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="common-processes.html"><a href="common-processes.html"><i class="fa fa-check"></i><b>3</b> Common Processes</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="common-processes.html"><a href="common-processes.html#change-column-types"><i class="fa fa-check"></i><b>3.1</b> Change Column Types</a></li>
+<li class="chapter" data-level="3.2" data-path="common-processes.html"><a href="common-processes.html#split-a-string-column-into-multiple-columns"><i class="fa fa-check"></i><b>3.2</b> Split a String Column into Multiple Columns</a></li>
+<li class="chapter" data-level="3.3" data-path="common-processes.html"><a href="common-processes.html#drop-a-column"><i class="fa fa-check"></i><b>3.3</b> Drop a Column</a></li>
+<li class="chapter" data-level="3.4" data-path="common-processes.html"><a href="common-processes.html#change-a-column-by-a-condition"><i class="fa fa-check"></i><b>3.4</b> Change a Column by a Condition</a></li>
+<li class="chapter" data-level="3.5" data-path="common-processes.html"><a href="common-processes.html#change-a-column-by-multiple-conditions"><i class="fa fa-check"></i><b>3.5</b> Change a Column by Multiple Conditions</a></li>
+<li class="chapter" data-level="3.6" data-path="common-processes.html"><a href="common-processes.html#split-a-dataset-into-training-and-testing"><i class="fa fa-check"></i><b>3.6</b> Split a Dataset into Training and Testing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions-1.html"><a href="functions-1.html"><i class="fa fa-check"></i><b>4</b> Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="functions-1.html"><a href="functions-1.html#data-manipulation-functions"><i class="fa fa-check"></i><b>4.1</b> Data Manipulation Functions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="functions-1.html"><a href="functions-1.html#across"><i class="fa fa-check"></i><b>4.1.1</b> <code>across()</code></a></li>
+<li class="chapter" data-level="4.1.2" data-path="functions-1.html"><a href="functions-1.html#mutate"><i class="fa fa-check"></i><b>4.1.2</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="4.1.3" data-path="functions-1.html"><a href="functions-1.html#if_else"><i class="fa fa-check"></i><b>4.1.3</b> <code>if_else()</code></a></li>
+<li class="chapter" data-level="4.1.4" data-path="functions-1.html"><a href="functions-1.html#case_when"><i class="fa fa-check"></i><b>4.1.4</b> <code>case_when()</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="functions-1.html"><a href="functions-1.html#seperate_longer_delim"><i class="fa fa-check"></i><b>4.1.5</b> <code>seperate_longer_delim()</code></a></li>
+<li class="chapter" data-level="4.1.6" data-path="functions-1.html"><a href="functions-1.html#seperate_wider_delim"><i class="fa fa-check"></i><b>4.1.6</b> <code>seperate_wider_delim()</code></a></li>
+<li class="chapter" data-level="4.1.7" data-path="functions-1.html"><a href="functions-1.html#na_if"><i class="fa fa-check"></i><b>4.1.7</b> <code>na_if()</code></a></li>
+<li class="chapter" data-level="4.1.8" data-path="functions-1.html"><a href="functions-1.html#grepl"><i class="fa fa-check"></i><b>4.1.8</b> <code>grepl()</code></a></li>
+<li class="chapter" data-level="4.1.9" data-path="functions-1.html"><a href="functions-1.html#str_replace_all-or-str_replace"><i class="fa fa-check"></i><b>4.1.9</b> <code>str_replace_all()</code> or <code>str_replace()</code></a></li>
+<li class="chapter" data-level="4.1.10" data-path="functions-1.html"><a href="functions-1.html#str_to_title-str_to_upper-str_to_lower-and-str_to_sentence"><i class="fa fa-check"></i><b>4.1.10</b> <code>str_to_title()</code>, <code>str_to_upper()</code>, <code>str_to_lower()</code>, and <code>str_to_sentence()</code></a></li>
+<li class="chapter" data-level="4.1.11" data-path="functions-1.html"><a href="functions-1.html#str_squish-or-str_trim"><i class="fa fa-check"></i><b>4.1.11</b> <code>str_squish()</code> or <code>str_trim()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="functions-1.html"><a href="functions-1.html#time"><i class="fa fa-check"></i><b>4.2</b> Time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="functions-1.html"><a href="functions-1.html#mdy"><i class="fa fa-check"></i><b>4.2.1</b> <code>mdy()</code></a></li>
+<li class="chapter" data-level="4.2.2" data-path="functions-1.html"><a href="functions-1.html#day-month-or-year"><i class="fa fa-check"></i><b>4.2.2</b> <code>day()</code>, <code>month()</code>, or <code>year()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="misc..html"><a href="misc..html"><i class="fa fa-check"></i><b>5</b> Misc.</a></li>
+<li class="chapter" data-level="6" data-path="practice-problems-1.html"><a href="practice-problems-1.html"><i class="fa fa-check"></i><b>6</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="practice-problems-1.html"><a href="practice-problems-1.html#r-project-redone"><i class="fa fa-check"></i><b>6.1</b> R Project Redone</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-2"><i class="fa fa-check"></i><b>6.1.1</b> 1 and 2</a></li>
+<li class="chapter" data-level="6.1.2" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-4"><i class="fa fa-check"></i><b>6.1.2</b> 3 and 4</a></li>
+<li class="chapter" data-level="6.1.3" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-7"><i class="fa fa-check"></i><b>6.1.3</b> 6 and 7</a></li>
+<li class="chapter" data-level="6.1.4" data-path="practice-problems-1.html"><a href="practice-problems-1.html#section-1"><i class="fa fa-check"></i><b>6.1.4</b> 9</a></li>
+<li class="chapter" data-level="6.1.5" data-path="practice-problems-1.html"><a href="practice-problems-1.html#section-2"><i class="fa fa-check"></i><b>6.1.5</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="practice-problems-1" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Practice Problems<a href="practice-problems-1.html#practice-problems-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="r-project-redone" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> R Project Redone<a href="practice-problems-1.html#r-project-redone" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="practice-problems-1.html#cb125-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb125-2"><a href="practice-problems-1.html#cb125-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb125-3"><a href="practice-problems-1.html#cb125-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;~/Downloads/project_data_file.csv&quot;</span>)</span>
+<span id="cb125-4"><a href="practice-problems-1.html#cb125-4" tabindex="-1"></a><span class="fu">print</span>(data)</span></code></pre></div>
+<pre><code>##    Birth_Month_Year           State                  Country
+## 1    December, 1999  North Carolina            United States
+## 2           7, 1998        Virginia            United States
+## 3       April, 1999  North Carolina United States of America
+## 4    November, 1999      California            United States
+## 5        June, 1991        Kentucky                      USA
+## 6    December, 1999  North Carolina United States of America
+## 7         May, 2000           Texas              South Korea
+## 8     January, 1998       Tennessee              South Korea
+## 9     October, 1998              NC                      USA
+## 10   November, 2001        Illinois                       US
+## 11      April, 2000              NC                     U.S.
+## 12    October, 1997                                   Taiwan
+## 13   December, 1997              NC                    China
+## 14    October, 2001  North Carolina            United States
+## 15       June, 1995              NC                      USA
+## 16       June, 2001  North Carolina            United States
+## 17  September, 1996  North Carolina            United States
+## 18    October, 1999           Texas                      USA
+## 19  September, 2000  North Carolina            United States
+## 20        May, 2001  North Carolina            United States
+## 21   February, 1994              NC              South Korea
+## 22       June, 2002  North Carolina United States of America
+## 23  February , 1999  North Carolina                      USA
+## 24   November, 1999  North Carolina                      USA
+## 25         11, 2000              NC                       US
+## 26     August, 2000       Telangana                    India
+## 27     August, 2001  North Carolina United States of America
+## 28    October, 2000  North Carolina                  Uruguay
+## 29        May, 1995         Georgia              South Korea
+## 30   October , 1989              NC                    China
+## 31       July, 2001              NC                         
+## 32       June, 1999  North Carolina            United States
+## 33     August, 1999              NC                   Mexico
+## 34    January, 2001  South Carolina        The United States
+## 35     August, 2000  North Carolina                      USA
+## 36       July, 2001         Alabama            United States
+## 37        May, 2001     Connecticut                      USA
+## 38    October, 1990  North Carolina                      USA
+## 39        May, 1995  North Carolina                       US
+## 40  September, 2000       Wisconsin                      USA
+## 41       June, 2000  North Carolina            United States
+## 42   February, 1996        Illinois                      USA
+## 43        May, 2001  North Carolina            United States
+## 44   October , 1999         JiangSu                    China
+## 45        May, 2001              NC                      USA
+## 46    October, 1991        New York            United States
+## 47  December , 1999  North Carolina            United States
+## 48        May, 2000         Florida                      USA
+## 49      March, 2001  North Carolina        The United States
+## 50       June, 2001  North Carolina            United States
+## 51   December, 2000  North Carolina            United States
+## 52   February, 2001              NC                      USA
+## 53    January, 1995            &lt;NA&gt;                Singapore
+## 54      April, 2001  North Carolina            United States
+## 55   February, 2002  North Carolina            United States
+## 56   February, 2001  North Carolina                      USA
+## 57      March, 1998            Utah            United States
+## 58      March, 1995  North Carolina                      USA
+## 59     August, 1996              NC                       US
+## 60       June, 2000  North Carolina            United States
+## 61   February, 2002  North Carolina            United States
+## 62    October, 2000              NC                      USA
+## 63    August , 2001           Texas            United States
+## 64          9, 1993              NC            United States
+## 65    October, 2000         Florida United States of America
+## 66   February, 2001   Massachusetts                      USA
+## 67        May, 2001  North Carolina            United States
+## 68        May, 1999              NC                      USA
+## 69   February, 1971       Guatemala                Guatemala
+## 70        May, 1993            Lima                     Peru
+## 71    October, 1979         Anambra                  Nigeria
+## 72  September, 1998       Telangana                    India
+## 73      March, 1999      New Jersey            United States
+## 74    January, 2002  North Carolina            United States
+## 75  September, 2001       Minnesota                      USA
+## 76          April,   North Carolina                   Durham
+## 77       June, 2001  North Carolina            United States
+## 78 September , 2000  North Carolina            United States
+## 79   November, 2000   Massachusetts            United States
+## 80    January, 2000    Pennsylvania            United States
+## 81    October, 1999      California United States of America
+## 82  September, 1990  North Carolina United States of America
+## 83   December, 1992    Pennsylvania            United States
+## 84  September, 2000      California                    U.S.A
+## 85        May, 1999  North Carolina                     U.S.
+## 86       July, 2001  North Carolina           United States 
+## 87     August, 1994                                  Myanmar
+## 88   November, 1987         Taoyuan                   Taiwan
+## 89      April, 2000  North Carolina                      USA
+## 90     august, 2001         arizona            united states
+## 91   February, 2001  North Carolina            United States
+## 92   December, 1997           Lagos                  Nigeria
+## 93       July, 1996       Karnataka                    India
+## 94   December, 1999  North Carolina            United States
+## 95         April ,  North Carolina  United States of America
+## 96      April, 1998              NC                      USA
+##                      Languages When_Hear_About_Program
+## 1                      English               1-2 years
+## 2             English, Spanish               1-2 years
+## 3                      English               3-5 years
+## 4                      English  Less than one year ago
+## 5                      English               1-2 years
+## 6                      English  Less than one year ago
+## 7              English, Korean  Less than one year ago
+## 8              English, Korean               1-2 years
+## 9             English, Spanish               3-5 years
+## 10                     English               1-2 years
+## 11   English, Spanish, Chinese               1-2 years
+## 12            English, Chinese  Less than one year ago
+## 13            English, Chinese               1-2 years
+## 14                     English               1-2 years
+## 15            English, Spanish               1-2 years
+## 16             English, Telugu               3-5 years
+## 17           English, Japanese  Less than one year ago
+## 18                     English  Less than one year ago
+## 19                     English               1-2 years
+## 20                     English  Less than one year ago
+## 21             English, Korean               3-5 years
+## 22                     English               1-2 years
+## 23            English, Spanish               1-2 years
+## 24    English, Spanish, Telugu               3-5 years
+## 25            English, Chinese               1-2 years
+## 26     English, Telugu,  Hindi               1-2 years
+## 27                     English               1-2 years
+## 28            English, Spanish               1-2 years
+## 29             English, Korean               3-5 years
+## 30            English, Chinese  Less than one year ago
+## 31                     English               1-2 years
+## 32            English, Spanish  Less than one year ago
+## 33            English, Spanish  Less than one year ago
+## 34                     English  Less than one year ago
+## 35                   English,                1-2 years
+## 36                     English  Less than one year ago
+## 37                     English  Less than one year ago
+## 38                     English               1-2 years
+## 39            English, Spanish               1-2 years
+## 40                     English               1-2 years
+## 41   English, Spanish, Italian               1-2 years
+## 42             English, French               1-2 years
+## 43                     English  Less than one year ago
+## 44            English, Chinese               1-2 years
+## 45            English, Chinese  Less than one year ago
+## 46                     English               1-2 years
+## 47                     English               1-2 years
+## 48            English, Chinese  Less than one year ago
+## 49                     English               1-2 years
+## 50                     English               1-2 years
+## 51              English, Hindi               1-2 years
+## 52                     English               1-2 years
+## 53   English, Spanish, Chinese               1-2 years
+## 54                     English               3-5 years
+## 55                     English  Less than one year ago
+## 56            English, Chinese               1-2 years
+## 57                     English               3-5 years
+## 58                     English  Less than one year ago
+## 59                     English               6-8 years
+## 60                     English               3-5 years
+## 61                     English               3-5 years
+## 62            English, Spanish               1-2 years
+## 63                     English  Less than one year ago
+## 64                     English               6-8 years
+## 65            English, Spanish  Less than one year ago
+## 66            English, Russian               1-2 years
+## 67                     English  Less than one year ago
+## 68   English, Spanish, Chinese               1-2 years
+## 69            English, Spanish               1-2 years
+## 70            English, Spanish               3-5 years
+## 71                     English               3-5 years
+## 72             English, Telugu               1-2 years
+## 73             English, Telugu               1-2 years
+## 74                     English               1-2 years
+## 75                     English  Less than one year ago
+## 76                     English  Less than one year ago
+## 77                     English  Less than one year ago
+## 78                     English               1-2 years
+## 79                     English  Less than one year ago
+## 80                     English               1-2 years
+## 81                     English               1-2 years
+## 82                     English               3-5 years
+## 83                     English               3-5 years
+## 84         English, Vietnamese  Less than one year ago
+## 85            English, Spanish               3-5 years
+## 86                     English               1-2 years
+## 87   English, Chinese, Burmese               1-2 years
+## 88 English, Chinese, Taiwanese               6-8 years
+## 89  English, Spanish, Gujarati               3-5 years
+## 90                     English  Less than one year ago
+## 91                     English  Less than one year ago
+## 92                     English  Less than one year ago
+## 93   English, Kannada , Tamil   Less than one year ago
+## 94                     English               1-2 years
+## 95                     English               1-2 years
+## 96           English, Japanese               1-2 years
+##                         How_Hear_About_Program
+## 1                 1. Recommended by professors
+## 2             2. Recommended by family/friends
+## 3             2. Recommended by family/friends
+## 4             2. Recommended by family/friends
+## 5                             4. Search engine
+## 6                             4. Search engine
+## 7                 1. Recommended by professors
+## 8             2. Recommended by family/friends
+## 9             2. Recommended by family/friends
+## 10            2. Recommended by family/friends
+## 11                            4. Search engine
+## 12                            4. Search engine
+## 13                            4. Search engine
+## 14            2. Recommended by family/friends
+## 15            2. Recommended by family/friends
+## 16            2. Recommended by family/friends
+## 17                1. Recommended by professors
+## 18            2. Recommended by family/friends
+## 19            2. Recommended by family/friends
+## 20                            4. Search engine
+## 21            2. Recommended by family/friends
+## 22                            4. Search engine
+## 23            2. Recommended by family/friends
+## 24                1. Recommended by professors
+## 25            2. Recommended by family/friends
+## 26           5. Recommendations found in blogs
+## 27            2. Recommended by family/friends
+## 28                1. Recommended by professors
+## 29            2. Recommended by family/friends
+## 30                            4. Search engine
+## 31            2. Recommended by family/friends
+## 32 3. On social media (Twitter, Instagram, FB)
+## 33                            4. Search engine
+## 34                            4. Search engine
+## 35            2. Recommended by family/friends
+## 36                1. Recommended by professors
+## 37            2. Recommended by family/friends
+## 38            2. Recommended by family/friends
+## 39            2. Recommended by family/friends
+## 40                            4. Search engine
+## 41            2. Recommended by family/friends
+## 42                            4. Search engine
+## 43            2. Recommended by family/friends
+## 44            2. Recommended by family/friends
+## 45                1. Recommended by professors
+## 46                            4. Search engine
+## 47            2. Recommended by family/friends
+## 48                            4. Search engine
+## 49            2. Recommended by family/friends
+## 50                            4. Search engine
+## 51            2. Recommended by family/friends
+## 52 3. On social media (Twitter, Instagram, FB)
+## 53                            4. Search engine
+## 54            2. Recommended by family/friends
+## 55                1. Recommended by professors
+## 56            2. Recommended by family/friends
+## 57            2. Recommended by family/friends
+## 58                            4. Search engine
+## 59            2. Recommended by family/friends
+## 60            2. Recommended by family/friends
+## 61            2. Recommended by family/friends
+## 62            2. Recommended by family/friends
+## 63            2. Recommended by family/friends
+## 64            2. Recommended by family/friends
+## 65                            4. Search engine
+## 66            2. Recommended by family/friends
+## 67                            4. Search engine
+## 68            2. Recommended by family/friends
+## 69            2. Recommended by family/friends
+## 70            2. Recommended by family/friends
+## 71                            4. Search engine
+## 72                            4. Search engine
+## 73            2. Recommended by family/friends
+## 74                1. Recommended by professors
+## 75                            4. Search engine
+## 76 3. On social media (Twitter, Instagram, FB)
+## 77            2. Recommended by family/friends
+## 78                1. Recommended by professors
+## 79                1. Recommended by professors
+## 80                            4. Search engine
+## 81                            4. Search engine
+## 82            2. Recommended by family/friends
+## 83            2. Recommended by family/friends
+## 84                            4. Search engine
+## 85                            4. Search engine
+## 86                            4. Search engine
+## 87            2. Recommended by family/friends
+## 88            2. Recommended by family/friends
+## 89            2. Recommended by family/friends
+## 90            2. Recommended by family/friends
+## 91            2. Recommended by family/friends
+## 92           5. Recommendations found in blogs
+## 93                            4. Search engine
+## 94                1. Recommended by professors
+## 95 3. On social media (Twitter, Instagram, FB)
+## 96                1. Recommended by professors
+##                                                                                                         Hobbies
+## 1                                                                                           Video Games, Sports
+## 2                                            Movies, Television Series, Sports, Outside Recreational Activities
+## 3                                                                                            Sports, Art, Music
+## 4                                                             Video Games, Outside Recreational Activities, Art
+## 5                                                                           Movies, Video Games, Music, Reading
+## 6                     Movies, Television Series, Video Games, Sports, Outside Recreational Activities, Podcasts
+## 7                                                                       Sports, Outside Recreational Activities
+## 8                                                                             Movies, Video Games, Music, Dance
+## 9                                                                        Outside Recreational Activities, Music
+## 10                                                                      Movies, Outside Recreational Activities
+## 11                                          Movies, Video Games, Sports, Outside Recreational Activities, Music
+## 12                                                                            Movies, Television Series, Sports
+## 13                                                           Movies, Television Series, Video Games, Art, Music
+## 14                                                   Movies, Television Series, Outside Recreational Activities
+## 15                                                                        Salsa Dancing, Hot Yoga, Working out 
+## 16                                                                                                Sports, Music
+## 17                                                     Movies, Outside Recreational Activities, Art, Gardening 
+## 18                                                               Movies, Outside Recreational Activities, Music
+## 19                                                  Video Games, Sports, Outside Recreational Activities, Music
+## 20                                                          Video Games, Outside Recreational Activities, Music
+## 21                                                                                        Movies, Sports, Music
+## 22                                                                      Sports, Outside Recreational Activities
+## 23                                                                              Outside Recreational Activities
+## 24                                                   Television Series, Sports, Outside Recreational Activities
+## 25                                                                           Television Series, window shopping
+## 26                                                                               Movies, Television Series, Art
+## 27                                                               Movies, Outside Recreational Activities, Music
+## 28                                                       Movies, Sports, Outside Recreational Activities, Music
+## 29                            Movies, Outside Recreational Activities, Music, Weightlifting, Cooking, Traveling
+## 30                                                    Movies, Television Series, Explore cities and restaurants
+## 31                                                           Television Series, Outside Recreational Activities
+## 32                            Movies, Sports, Outside Recreational Activities, Theater, Dance, Reading, Writing
+## 33                                                                      Movies, Outside Recreational Activities
+## 34                                                                      Video Games, Sports, Card / Board Games
+## 35                                                           Television Series, Outside Recreational Activities
+## 36                                                        Sports, Outside Recreational Activities, Art, Cooking
+## 37                                                                              Outside Recreational Activities
+## 38                                                                     Outside Recreational Activities, Reading
+## 39                                                              Movies, Television Series, Art, sewing, crochet
+## 40                                                                      Sports, Outside Recreational Activities
+## 41 Movies, Television Series, Video Games, Sports, Outside Recreational Activities, Music, Board and card games
+## 42                                                                       Outside Recreational Activities, Music
+## 43                                                                      Movies, Outside Recreational Activities
+## 44                                                                                                       Sports
+## 45                                              Movies, Television Series, Outside Recreational Activities, Art
+## 46                                                                                    Movies, Television Series
+## 47                                            Television Series, Sports, Outside Recreational Activities, Music
+## 48                       Movies, Television Series, Video Games, Sports, Outside Recreational Activities, Music
+## 49                                                   Movies, Television Series, Outside Recreational Activities
+## 50                                                                            Movies, Television Series, Sports
+## 51                                                                      Movies, Outside Recreational Activities
+## 52                                                   Television Series, Sports, Outside Recreational Activities
+## 53                                    Movies, Television Series, Sports, Outside Recreational Activities, Music
+## 54                                           Movies, Television Series, Sports, Outside Recreational Activities
+## 55                                                         Video Games, Sports, Outside Recreational Activities
+## 56                                                    Television Series, Outside Recreational Activities, Music
+## 57                                           Movies, Television Series, Sports, Outside Recreational Activities
+## 58                          Sports, Outside Recreational Activities, Cooking and checking out local businesses!
+## 59                                                           Television Series, Outside Recreational Activities
+## 60                                            Movies, Video Games, Sports, Outside Recreational Activities, Art
+## 61                                       Movies, Television Series, Outside Recreational Activities, Art, Music
+## 62                       Movies, Television Series, Video Games, Sports, Outside Recreational Activities, Music
+## 63                                                                               Movies, Television Series, Art
+## 64                                                                                        Movies, Sports, Music
+## 65                                                                                                  Video Games
+## 66                                                                 Video Games, Outside Recreational Activities
+## 67                                                                        Television Series, Video Games, Music
+## 68                                            Movies, Video Games, Sports, Outside Recreational Activities, Art
+## 69                                                                            Movies, Television Series, Sports
+## 70                                                                            Movies, Television Series, Sports
+## 71                                                   Television Series, Sports, Outside Recreational Activities
+## 72                                              Movies, Television Series, Outside Recreational Activities, Art
+## 73                                            Television Series, Sports, Outside Recreational Activities, Music
+## 74                                                           Television Series, Outside Recreational Activities
+## 75                                            Television Series, Sports, Outside Recreational Activities, Music
+## 76                                                                                       Digital Jigsaw Puzzles
+## 77                                                    Television Series, Outside Recreational Activities, Music
+## 78                                                                                             Sports, Exercise
+## 79                                                                            Movies, Television Series, Sports
+## 80                 Movies, Television Series, Video Games, Sports, Outside Recreational Activities, Music, Read
+## 81                                                           Movies, Television Series, Video Games, Art, Music
+## 82                              Movies, Television Series, Video Games, Sports, Outside Recreational Activities
+## 83                                                                Television Series, Video Games, Sports, Music
+## 84                                                                                                       Sports
+## 85                                    Movies, Television Series, Sports, Outside Recreational Activities, Music
+## 86                                                                                            Television Series
+## 87                                                                                     Video Games, Sports, Art
+## 88                                                                                                       Sports
+## 89                                      Television Series, Video Games, Sports, Outside Recreational Activities
+## 90                                                               Sports, Outside Recreational Activities, Music
+## 91                                                                                            Television Series
+## 92                                                                                          Video Games, Sports
+## 93                                                                             Movies, Television Series, Music
+## 94                                                                                          Video Games, Sports
+## 95                                                                                       Digital Jigsaw Puzzles
+## 96                      Movies, Television Series, Video Games, Outside Recreational Activities, Music, Reading</code></pre>
+<div id="and-2" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> 1 and 2<a href="practice-problems-1.html#and-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a new column called Birth_Month which has only the month portion of Birth_Month_Year. Create a new column called Birth_Year which has only the year portion of Birth_Month_Year.</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="practice-problems-1.html#cb127-1" tabindex="-1"></a>data_alt <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb127-2"><a href="practice-problems-1.html#cb127-2" tabindex="-1"></a>  <span class="fu">separate_wider_delim</span>(Birth_Month_Year, <span class="at">delim=</span><span class="st">&quot;,&quot;</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Birth_Month&quot;</span>, <span class="st">&quot;Birth_Year&quot;</span>))</span>
+<span id="cb127-3"><a href="practice-problems-1.html#cb127-3" tabindex="-1"></a></span>
+<span id="cb127-4"><a href="practice-problems-1.html#cb127-4" tabindex="-1"></a><span class="fu">print</span>(data_alt)</span></code></pre></div>
+<pre><code>## # A tibble: 96 × 8
+##    Birth_Month Birth_Year State         Country Languages When_Hear_About_Prog…¹
+##    &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                 
+##  1 December    &quot; 1999&quot;    North Caroli… United… English   1-2 years             
+##  2 7           &quot; 1998&quot;    Virginia      United… English,… 1-2 years             
+##  3 April       &quot; 1999&quot;    North Caroli… United… English   3-5 years             
+##  4 November    &quot; 1999&quot;    California    United… English   Less than one year ago
+##  5 June        &quot; 1991&quot;    Kentucky      USA     English   1-2 years             
+##  6 December    &quot; 1999&quot;    North Caroli… United… English   Less than one year ago
+##  7 May         &quot; 2000&quot;    Texas         South … English,… Less than one year ago
+##  8 January     &quot; 1998&quot;    Tennessee     South … English,… 1-2 years             
+##  9 October     &quot; 1998&quot;    NC            USA     English,… 3-5 years             
+## 10 November    &quot; 2001&quot;    Illinois      US      English   1-2 years             
+## # ℹ 86 more rows
+## # ℹ abbreviated name: ¹​When_Hear_About_Program
+## # ℹ 2 more variables: How_Hear_About_Program &lt;chr&gt;, Hobbies &lt;chr&gt;</code></pre>
+</div>
+<div id="and-4" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> 3 and 4<a href="practice-problems-1.html#and-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Since the birth month and birth year were open ended fields, there are many inconsistencies in the data. Standardize the values for Birth_Month and Birth_Year. Show the five most frequent birth months, and the five least frequent birth months.</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="practice-problems-1.html#cb129-1" tabindex="-1"></a>data_alt2 <span class="ot">&lt;-</span> data_alt <span class="sc">%&gt;%</span></span>
+<span id="cb129-2"><a href="practice-problems-1.html#cb129-2" tabindex="-1"></a>  </span>
+<span id="cb129-3"><a href="practice-problems-1.html#cb129-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Birth_Month =</span> <span class="fu">case_when</span>(</span>
+<span id="cb129-4"><a href="practice-problems-1.html#cb129-4" tabindex="-1"></a>    Birth_Month <span class="sc">==</span> <span class="st">&quot;7&quot;</span> <span class="sc">~</span> <span class="st">&quot;July&quot;</span>,</span>
+<span id="cb129-5"><a href="practice-problems-1.html#cb129-5" tabindex="-1"></a>    Birth_Month <span class="sc">==</span> <span class="st">&quot;11&quot;</span> <span class="sc">~</span> <span class="st">&quot;November&quot;</span>,</span>
+<span id="cb129-6"><a href="practice-problems-1.html#cb129-6" tabindex="-1"></a>    Birth_Month <span class="sc">==</span> <span class="st">&quot;9&quot;</span> <span class="sc">~</span> <span class="st">&quot;September&quot;</span>,</span>
+<span id="cb129-7"><a href="practice-problems-1.html#cb129-7" tabindex="-1"></a>    <span class="at">.default =</span> Birth_Month)) <span class="sc">%&gt;%</span></span>
+<span id="cb129-8"><a href="practice-problems-1.html#cb129-8" tabindex="-1"></a>  </span>
+<span id="cb129-9"><a href="practice-problems-1.html#cb129-9" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Birth_Month =</span> <span class="fu">str_to_title</span>(<span class="fu">str_trim</span>(Birth_Month))) <span class="sc">%&gt;%</span></span>
+<span id="cb129-10"><a href="practice-problems-1.html#cb129-10" tabindex="-1"></a>  </span>
+<span id="cb129-11"><a href="practice-problems-1.html#cb129-11" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Birth_Year =</span> <span class="fu">as.numeric</span>(<span class="fu">str_trim</span>(Birth_Year)))</span>
+<span id="cb129-12"><a href="practice-problems-1.html#cb129-12" tabindex="-1"></a></span>
+<span id="cb129-13"><a href="practice-problems-1.html#cb129-13" tabindex="-1"></a><span class="fu">print</span>(data_alt2)</span></code></pre></div>
+<pre><code>## # A tibble: 96 × 8
+##    Birth_Month Birth_Year State         Country Languages When_Hear_About_Prog…¹
+##    &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                 
+##  1 December          1999 North Caroli… United… English   1-2 years             
+##  2 July              1998 Virginia      United… English,… 1-2 years             
+##  3 April             1999 North Caroli… United… English   3-5 years             
+##  4 November          1999 California    United… English   Less than one year ago
+##  5 June              1991 Kentucky      USA     English   1-2 years             
+##  6 December          1999 North Caroli… United… English   Less than one year ago
+##  7 May               2000 Texas         South … English,… Less than one year ago
+##  8 January           1998 Tennessee     South … English,… 1-2 years             
+##  9 October           1998 NC            USA     English,… 3-5 years             
+## 10 November          2001 Illinois      US      English   1-2 years             
+## # ℹ 86 more rows
+## # ℹ abbreviated name: ¹​When_Hear_About_Program
+## # ℹ 2 more variables: How_Hear_About_Program &lt;chr&gt;, Hobbies &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="practice-problems-1.html#cb131-1" tabindex="-1"></a>data_alt2 <span class="sc">%&gt;%</span> <span class="fu">count</span>(Birth_Month, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+##   Birth_Month     n
+##   &lt;chr&gt;       &lt;int&gt;
+## 1 October        13
+## 2 May            12
+## 3 February       10
+## 4 June            9
+## 5 September       9</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="practice-problems-1.html#cb133-1" tabindex="-1"></a>data_alt2 <span class="sc">%&gt;%</span> <span class="fu">count</span>(Birth_Month, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">tail</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+##   Birth_Month     n
+##   &lt;chr&gt;       &lt;int&gt;
+## 1 April           7
+## 2 November        6
+## 3 January         5
+## 4 July            5
+## 5 March           4</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="practice-problems-1.html#cb135-1" tabindex="-1"></a>data_alt2 <span class="sc">%&gt;%</span> <span class="fu">count</span>(Birth_Year, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+##   Birth_Year     n
+##        &lt;dbl&gt; &lt;int&gt;
+## 1       2001    24
+## 2       2000    19
+## 3       1999    16
+## 4       1998     6
+## 5       1995     5</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="practice-problems-1.html#cb137-1" tabindex="-1"></a>data_alt2 <span class="sc">%&gt;%</span> <span class="fu">count</span>(Birth_Year, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">tail</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+##   Birth_Year     n
+##        &lt;dbl&gt; &lt;int&gt;
+## 1       1971     1
+## 2       1979     1
+## 3       1987     1
+## 4       1989     1
+## 5       1992     1</code></pre>
+</div>
+<div id="and-7" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> 6 and 7<a href="practice-problems-1.html#and-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="practice-problems-1.html#cb139-1" tabindex="-1"></a>data_alt3 <span class="ot">&lt;-</span> data_alt2 <span class="sc">%&gt;%</span></span>
+<span id="cb139-2"><a href="practice-problems-1.html#cb139-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">State =</span> <span class="fu">ifelse</span>(State <span class="sc">%in%</span> state.name,State,<span class="cn">NA</span>))</span>
+<span id="cb139-3"><a href="practice-problems-1.html#cb139-3" tabindex="-1"></a></span>
+<span id="cb139-4"><a href="practice-problems-1.html#cb139-4" tabindex="-1"></a><span class="fu">print</span>(data_alt3)</span></code></pre></div>
+<pre><code>## # A tibble: 96 × 8
+##    Birth_Month Birth_Year State         Country Languages When_Hear_About_Prog…¹
+##    &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                 
+##  1 December          1999 North Caroli… United… English   1-2 years             
+##  2 July              1998 Virginia      United… English,… 1-2 years             
+##  3 April             1999 North Caroli… United… English   3-5 years             
+##  4 November          1999 California    United… English   Less than one year ago
+##  5 June              1991 Kentucky      USA     English   1-2 years             
+##  6 December          1999 North Caroli… United… English   Less than one year ago
+##  7 May               2000 Texas         South … English,… Less than one year ago
+##  8 January           1998 Tennessee     South … English,… 1-2 years             
+##  9 October           1998 &lt;NA&gt;          USA     English,… 3-5 years             
+## 10 November          2001 Illinois      US      English   1-2 years             
+## # ℹ 86 more rows
+## # ℹ abbreviated name: ¹​When_Hear_About_Program
+## # ℹ 2 more variables: How_Hear_About_Program &lt;chr&gt;, Hobbies &lt;chr&gt;</code></pre>
+</div>
+<div id="section-1" class="section level3 hasAnchor" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> 9<a href="practice-problems-1.html#section-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="practice-problems-1.html#cb141-1" tabindex="-1"></a>data_alt4 <span class="ot">&lt;-</span> data_alt3 <span class="sc">%&gt;%</span></span>
+<span id="cb141-2"><a href="practice-problems-1.html#cb141-2" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb141-3"><a href="practice-problems-1.html#cb141-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">How_Hear_About_Program =</span> <span class="fu">substring</span>(How_Hear_About_Program, <span class="dv">4</span>, <span class="fu">nchar</span>(How_Hear_About_Program))) <span class="sc">%&gt;%</span></span>
+<span id="cb141-4"><a href="practice-problems-1.html#cb141-4" tabindex="-1"></a>           <span class="fu">ungroup</span>()</span>
+<span id="cb141-5"><a href="practice-problems-1.html#cb141-5" tabindex="-1"></a></span>
+<span id="cb141-6"><a href="practice-problems-1.html#cb141-6" tabindex="-1"></a><span class="fu">print</span>(data_alt4)</span></code></pre></div>
+<pre><code>## # A tibble: 96 × 8
+##    Birth_Month Birth_Year State         Country Languages When_Hear_About_Prog…¹
+##    &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                 
+##  1 December          1999 North Caroli… United… English   1-2 years             
+##  2 July              1998 Virginia      United… English,… 1-2 years             
+##  3 April             1999 North Caroli… United… English   3-5 years             
+##  4 November          1999 California    United… English   Less than one year ago
+##  5 June              1991 Kentucky      USA     English   1-2 years             
+##  6 December          1999 North Caroli… United… English   Less than one year ago
+##  7 May               2000 Texas         South … English,… Less than one year ago
+##  8 January           1998 Tennessee     South … English,… 1-2 years             
+##  9 October           1998 &lt;NA&gt;          USA     English,… 3-5 years             
+## 10 November          2001 Illinois      US      English   1-2 years             
+## # ℹ 86 more rows
+## # ℹ abbreviated name: ¹​When_Hear_About_Program
+## # ℹ 2 more variables: How_Hear_About_Program &lt;chr&gt;, Hobbies &lt;chr&gt;</code></pre>
+</div>
+<div id="section-2" class="section level3" number="6.1.5">
+<h3><span class="header-section-number">6.1.5</span> </h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="misc..html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/lkmcl/R_Reference/edit/main/04-Practice.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/lkmcl/R_Reference/blob/main/04-Practice.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

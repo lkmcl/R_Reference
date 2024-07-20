@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | R Reference Manual</title>
-  <meta name="description" content="Page not found | R Reference Manual" />
+  <title>Chapter 3 Common Processes | R Reference Manual</title>
+  <meta name="description" content="Chapter 3 Common Processes | R Reference Manual" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | R Reference Manual" />
+  <meta property="og:title" content="Chapter 3 Common Processes | R Reference Manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | R Reference Manual" />
+  <meta name="twitter:title" content="Chapter 3 Common Processes | R Reference Manual" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="tidyverse.html"/>
+<link rel="next" href="functions-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -252,19 +252,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="common-processes" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Common Processes<a href="common-processes.html#common-processes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Combinations of functions that are commonly used in data processing
+tasks.</p>
+<div id="change-column-types" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Change Column Types<a href="common-processes.html#change-column-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Col1, Col2, Col3 are columns that we want to change to factors</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="common-processes.html#cb106-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb106-2"><a href="common-processes.html#cb106-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(Col1, Col2, Col3), as.factor))</span></code></pre></div>
+<p><code>c(Col1, Col2, Col3)</code> selects Col1, Col2, and Col3</p>
+<p>If we want to change all columns except for Col4 and Col5 to factor</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="common-processes.html#cb107-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb107-2"><a href="common-processes.html#cb107-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="sc">-</span><span class="fu">c</span>(Col4, Col5), as.factor))</span></code></pre></div>
+<p><code>-c(Col4, Col5)</code> represents not Col4 or Col5</p>
+</div>
+<div id="split-a-string-column-into-multiple-columns" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Split a String Column into Multiple Columns<a href="common-processes.html#split-a-string-column-into-multiple-columns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="common-processes.html#cb108-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb108-2"><a href="common-processes.html#cb108-2" tabindex="-1"></a>  <span class="fu">separate_wider_delim</span>(Combined_Col, <span class="at">delim=</span><span class="st">&quot;,&quot;</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Col1&quot;</span>, <span class="st">&quot;Col2&quot;</span>)) </span></code></pre></div>
+</div>
+<div id="drop-a-column" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Drop a Column<a href="common-processes.html#drop-a-column" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="common-processes.html#cb109-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb109-2"><a href="common-processes.html#cb109-2" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>Col_To_Drop)</span></code></pre></div>
+<p><code>select(-Col_To_Drop)</code> selects all Columns except for Col_To_Drop</p>
+</div>
+<div id="change-a-column-by-a-condition" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Change a Column by a Condition<a href="common-processes.html#change-a-column-by-a-condition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="common-processes.html#cb110-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb110-2"><a href="common-processes.html#cb110-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Col1 =</span> <span class="fu">ifelse</span>(Col1 <span class="sc">&gt;</span> <span class="dv">0</span>, Col1 <span class="sc">+</span> Col2, Col1))</span></code></pre></div>
+<p><code>Col1 &gt; 0</code> is a conditional that is being tested</p>
+<p><code>Col1 + Col2</code> is what happens when the conditional (<code>Col1 &gt; 0</code> in this
+example) is True</p>
+<p><code>Col1</code> is what happens when the conditional is False</p>
+</div>
+<div id="change-a-column-by-multiple-conditions" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Change a Column by Multiple Conditions<a href="common-processes.html#change-a-column-by-multiple-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Can use multiple mutate + if_else calls, or can use <code>case_when</code></p>
+<p>**Be careful with <code>case_when()</code> because the order of tests matters,
+just like a series of if-else statements.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="common-processes.html#cb111-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb111-2"><a href="common-processes.html#cb111-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Country =</span>  <span class="fu">case_when</span>(</span>
+<span id="cb111-3"><a href="common-processes.html#cb111-3" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;US&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-4"><a href="common-processes.html#cb111-4" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;U.S.A&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-5"><a href="common-processes.html#cb111-5" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;U.S.&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-6"><a href="common-processes.html#cb111-6" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;USA&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-7"><a href="common-processes.html#cb111-7" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;United States of America&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-8"><a href="common-processes.html#cb111-8" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;The United States&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-9"><a href="common-processes.html#cb111-9" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;united states&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-10"><a href="common-processes.html#cb111-10" tabindex="-1"></a>      Country <span class="sc">==</span> <span class="st">&quot;Durham&quot;</span> <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-11"><a href="common-processes.html#cb111-11" tabindex="-1"></a>      State <span class="sc">==</span> <span class="st">&quot;North Carolina&quot;</span> <span class="sc">&amp;</span> <span class="fu">is.na</span>(Country) <span class="sc">~</span> <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb111-12"><a href="common-processes.html#cb111-12" tabindex="-1"></a>      <span class="at">.default =</span> Country </span>
+<span id="cb111-13"><a href="common-processes.html#cb111-13" tabindex="-1"></a>))</span></code></pre></div>
+<p>A more efficient approach here would be to use
+<code>Country %in% c("US", "U.S.A", ... "Durham"</code>, but they produce the same
+results.</p>
+<p><code>Country == "US"</code> is the conditional tested.</p>
+<p><code>~ "United States"</code> is the result returned when the condition is True.</p>
+<p><code>.default = Country</code> returns <code>Country</code> when none of the cases are used.</p>
+</div>
+<div id="split-a-dataset-into-training-and-testing" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Split a Dataset into Training and Testing<a href="common-processes.html#split-a-dataset-into-training-and-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="common-processes.html#cb112-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) </span>
+<span id="cb112-2"><a href="common-processes.html#cb112-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="co"># if there is not a index, create one</span></span>
+<span id="cb112-3"><a href="common-processes.html#cb112-3" tabindex="-1"></a>train <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="fl">0.7</span>) </span>
+<span id="cb112-4"><a href="common-processes.html#cb112-4" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(data, train, <span class="at">by =</span> <span class="st">&#39;id&#39;</span>)</span></code></pre></div>
+<p><code>0.7</code> is the percent of the data to include in the training.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -295,7 +358,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/lkmcl/R_Reference/edit/main/%s",
+"link": "https://github.com/lkmcl/R_Reference/edit/main/03-race.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -303,7 +366,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/lkmcl/R_Reference/blob/main/%s",
+"link": "https://github.com/lkmcl/R_Reference/blob/main/03-race.Rmd",
 "text": null
 },
 "download": null,

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Tidyverse | R Reference Manual</title>
+  <meta name="description" content="Chapter 2 Tidyverse | R Reference Manual" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Tidyverse | R Reference Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Tidyverse | R Reference Manual" />
+  
+  
+  
+
+<meta name="author" content="Logan McLaurin" />
+
+
+<meta name="date" content="2024-07-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="common-processes.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Reference Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R Basics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.1</b> Operators</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#variables"><i class="fa fa-check"></i><b>1.1.2</b> Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#characters"><i class="fa fa-check"></i><b>1.2</b> Characters</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#paste-function"><i class="fa fa-check"></i><b>1.2.1</b> Paste function</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#other-character-functions"><i class="fa fa-check"></i><b>1.2.2</b> Other character functions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#lists"><i class="fa fa-check"></i><b>1.3</b> Lists</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#factors"><i class="fa fa-check"></i><b>1.4</b> Factors</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#matrices"><i class="fa fa-check"></i><b>1.5</b> Matrices</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#dataframe"><i class="fa fa-check"></i><b>1.6</b> Dataframe</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#conditionals"><i class="fa fa-check"></i><b>1.7</b> Conditionals</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loops"><i class="fa fa-check"></i><b>1.8</b> Loops</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#functions"><i class="fa fa-check"></i><b>1.9</b> Functions</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#practice-problems"><i class="fa fa-check"></i><b>1.10</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="index.html"><a href="index.html#list-practice"><i class="fa fa-check"></i><b>1.10.1</b> List Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i><b>2</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tidyverse.html"><a href="tidyverse.html#cheat-sheets"><i class="fa fa-check"></i><b>2.1</b> Cheat Sheets</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="tidyverse.html"><a href="tidyverse.html#dplyr-data-manipulation"><i class="fa fa-check"></i><b>2.1.1</b> dplyr: data manipulation</a></li>
+<li class="chapter" data-level="2.1.2" data-path="tidyverse.html"><a href="tidyverse.html#forcats-categorical"><i class="fa fa-check"></i><b>2.1.2</b> forcats: categorical</a></li>
+<li class="chapter" data-level="2.1.3" data-path="tidyverse.html"><a href="tidyverse.html#ggplot2-visualization"><i class="fa fa-check"></i><b>2.1.3</b> ggplot2: visualization</a></li>
+<li class="chapter" data-level="2.1.4" data-path="tidyverse.html"><a href="tidyverse.html#lubridate-datetimes"><i class="fa fa-check"></i><b>2.1.4</b> lubridate: datetimes</a></li>
+<li class="chapter" data-level="2.1.5" data-path="tidyverse.html"><a href="tidyverse.html#purrr-functions-and-vectors"><i class="fa fa-check"></i><b>2.1.5</b> purrr: functions and vectors</a></li>
+<li class="chapter" data-level="2.1.6" data-path="tidyverse.html"><a href="tidyverse.html#readr-reading"><i class="fa fa-check"></i><b>2.1.6</b> readr: reading</a></li>
+<li class="chapter" data-level="2.1.7" data-path="tidyverse.html"><a href="tidyverse.html#stringr-strings"><i class="fa fa-check"></i><b>2.1.7</b> stringr: strings</a></li>
+<li class="chapter" data-level="2.1.8" data-path="tidyverse.html"><a href="tidyverse.html#tidyr-data-wrangling"><i class="fa fa-check"></i><b>2.1.8</b> tidyr: data wrangling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="tidyverse.html"><a href="tidyverse.html#basics"><i class="fa fa-check"></i><b>2.2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="tidyverse.html"><a href="tidyverse.html#tidy-data"><i class="fa fa-check"></i><b>2.2.1</b> Tidy Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="tidyverse.html"><a href="tidyverse.html#pivot"><i class="fa fa-check"></i><b>2.2.2</b> Pivot</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tidyverse.html"><a href="tidyverse.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tidyverse.html"><a href="tidyverse.html#rows"><i class="fa fa-check"></i><b>2.3.1</b> Rows</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tidyverse.html"><a href="tidyverse.html#columns"><i class="fa fa-check"></i><b>2.3.2</b> Columns</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tidyverse.html"><a href="tidyverse.html#grouping"><i class="fa fa-check"></i><b>2.3.3</b> Grouping</a></li>
+<li class="chapter" data-level="2.3.4" data-path="tidyverse.html"><a href="tidyverse.html#section"><i class="fa fa-check"></i><b>2.3.4</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="common-processes.html"><a href="common-processes.html"><i class="fa fa-check"></i><b>3</b> Common Processes</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="common-processes.html"><a href="common-processes.html#change-column-types"><i class="fa fa-check"></i><b>3.1</b> Change Column Types</a></li>
+<li class="chapter" data-level="3.2" data-path="common-processes.html"><a href="common-processes.html#split-a-string-column-into-multiple-columns"><i class="fa fa-check"></i><b>3.2</b> Split a String Column into Multiple Columns</a></li>
+<li class="chapter" data-level="3.3" data-path="common-processes.html"><a href="common-processes.html#drop-a-column"><i class="fa fa-check"></i><b>3.3</b> Drop a Column</a></li>
+<li class="chapter" data-level="3.4" data-path="common-processes.html"><a href="common-processes.html#change-a-column-by-a-condition"><i class="fa fa-check"></i><b>3.4</b> Change a Column by a Condition</a></li>
+<li class="chapter" data-level="3.5" data-path="common-processes.html"><a href="common-processes.html#change-a-column-by-multiple-conditions"><i class="fa fa-check"></i><b>3.5</b> Change a Column by Multiple Conditions</a></li>
+<li class="chapter" data-level="3.6" data-path="common-processes.html"><a href="common-processes.html#split-a-dataset-into-training-and-testing"><i class="fa fa-check"></i><b>3.6</b> Split a Dataset into Training and Testing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions-1.html"><a href="functions-1.html"><i class="fa fa-check"></i><b>4</b> Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="functions-1.html"><a href="functions-1.html#data-manipulation-functions"><i class="fa fa-check"></i><b>4.1</b> Data Manipulation Functions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="functions-1.html"><a href="functions-1.html#across"><i class="fa fa-check"></i><b>4.1.1</b> <code>across()</code></a></li>
+<li class="chapter" data-level="4.1.2" data-path="functions-1.html"><a href="functions-1.html#mutate"><i class="fa fa-check"></i><b>4.1.2</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="4.1.3" data-path="functions-1.html"><a href="functions-1.html#if_else"><i class="fa fa-check"></i><b>4.1.3</b> <code>if_else()</code></a></li>
+<li class="chapter" data-level="4.1.4" data-path="functions-1.html"><a href="functions-1.html#case_when"><i class="fa fa-check"></i><b>4.1.4</b> <code>case_when()</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="functions-1.html"><a href="functions-1.html#seperate_longer_delim"><i class="fa fa-check"></i><b>4.1.5</b> <code>seperate_longer_delim()</code></a></li>
+<li class="chapter" data-level="4.1.6" data-path="functions-1.html"><a href="functions-1.html#seperate_wider_delim"><i class="fa fa-check"></i><b>4.1.6</b> <code>seperate_wider_delim()</code></a></li>
+<li class="chapter" data-level="4.1.7" data-path="functions-1.html"><a href="functions-1.html#na_if"><i class="fa fa-check"></i><b>4.1.7</b> <code>na_if()</code></a></li>
+<li class="chapter" data-level="4.1.8" data-path="functions-1.html"><a href="functions-1.html#grepl"><i class="fa fa-check"></i><b>4.1.8</b> <code>grepl()</code></a></li>
+<li class="chapter" data-level="4.1.9" data-path="functions-1.html"><a href="functions-1.html#str_replace_all-or-str_replace"><i class="fa fa-check"></i><b>4.1.9</b> <code>str_replace_all()</code> or <code>str_replace()</code></a></li>
+<li class="chapter" data-level="4.1.10" data-path="functions-1.html"><a href="functions-1.html#str_to_title-str_to_upper-str_to_lower-and-str_to_sentence"><i class="fa fa-check"></i><b>4.1.10</b> <code>str_to_title()</code>, <code>str_to_upper()</code>, <code>str_to_lower()</code>, and <code>str_to_sentence()</code></a></li>
+<li class="chapter" data-level="4.1.11" data-path="functions-1.html"><a href="functions-1.html#str_squish-or-str_trim"><i class="fa fa-check"></i><b>4.1.11</b> <code>str_squish()</code> or <code>str_trim()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="functions-1.html"><a href="functions-1.html#time"><i class="fa fa-check"></i><b>4.2</b> Time</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="functions-1.html"><a href="functions-1.html#mdy"><i class="fa fa-check"></i><b>4.2.1</b> <code>mdy()</code></a></li>
+<li class="chapter" data-level="4.2.2" data-path="functions-1.html"><a href="functions-1.html#day-month-or-year"><i class="fa fa-check"></i><b>4.2.2</b> <code>day()</code>, <code>month()</code>, or <code>year()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="misc..html"><a href="misc..html"><i class="fa fa-check"></i><b>5</b> Misc.</a></li>
+<li class="chapter" data-level="6" data-path="practice-problems-1.html"><a href="practice-problems-1.html"><i class="fa fa-check"></i><b>6</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="practice-problems-1.html"><a href="practice-problems-1.html#r-project-redone"><i class="fa fa-check"></i><b>6.1</b> R Project Redone</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-2"><i class="fa fa-check"></i><b>6.1.1</b> 1 and 2</a></li>
+<li class="chapter" data-level="6.1.2" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-4"><i class="fa fa-check"></i><b>6.1.2</b> 3 and 4</a></li>
+<li class="chapter" data-level="6.1.3" data-path="practice-problems-1.html"><a href="practice-problems-1.html#and-7"><i class="fa fa-check"></i><b>6.1.3</b> 6 and 7</a></li>
+<li class="chapter" data-level="6.1.4" data-path="practice-problems-1.html"><a href="practice-problems-1.html#section-1"><i class="fa fa-check"></i><b>6.1.4</b> 9</a></li>
+<li class="chapter" data-level="6.1.5" data-path="practice-problems-1.html"><a href="practice-problems-1.html#section-2"><i class="fa fa-check"></i><b>6.1.5</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Reference Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidyverse" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Tidyverse<a href="tidyverse.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cheat-sheets" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Cheat Sheets<a href="tidyverse.html#cheat-sheets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dplyr-data-manipulation" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> dplyr: data manipulation<a href="tidyverse.html#dplyr-data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/dplyr-1.png" /></p>
+</div>
+<div id="forcats-categorical" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> forcats: categorical<a href="tidyverse.html#forcats-categorical" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/forcats-1.png" /></p>
+</div>
+<div id="ggplot2-visualization" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> ggplot2: visualization<a href="tidyverse.html#ggplot2-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/ggplot2-1.png" /></p>
+</div>
+<div id="lubridate-datetimes" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> lubridate: datetimes<a href="tidyverse.html#lubridate-datetimes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/lubridate-1.png" /></p>
+</div>
+<div id="purrr-functions-and-vectors" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> purrr: functions and vectors<a href="tidyverse.html#purrr-functions-and-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/purrr-1.png" /></p>
+</div>
+<div id="readr-reading" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> readr: reading<a href="tidyverse.html#readr-reading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/readr-1.png" /></p>
+</div>
+<div id="stringr-strings" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> stringr: strings<a href="tidyverse.html#stringr-strings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/stringr-1.png" /></p>
+</div>
+<div id="tidyr-data-wrangling" class="section level3 hasAnchor" number="2.1.8">
+<h3><span class="header-section-number">2.1.8</span> tidyr: data wrangling<a href="tidyverse.html#tidyr-data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/tidyr-1.png" /></p>
+</div>
+</div>
+<div id="basics" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Basics<a href="tidyverse.html#basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Differences between tibbles and dataframes relate to printing and subsetting</p></li>
+<li><p><code>~</code> operator separates arguments to a formula</p></li>
+<li><p><code>.</code> operater is short for all columns</p></li>
+<li><p><code>%&gt;%</code> operator allows chaining of sequences to apply over single statements</p></li>
+</ul>
+<div id="tidy-data" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Tidy Data<a href="tidyverse.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Every variable is stored in its own column</p></li>
+<li><p>Every observation or sample is stored in its own row</p></li>
+<li><p>Every value is stored in its own cell</p></li>
+</ol>
+</div>
+<div id="pivot" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Pivot<a href="tidyverse.html#pivot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><code>pivot_longer</code> handles variables spread over multiple columns</p></li>
+<li><p><code>pivot_wider</code> handles variables spread over multiple rows</p></li>
+</ul>
+<p><code>pivot_longer</code> example:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="tidyverse.html#cb67-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ───────────────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ─────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="tidyverse.html#cb69-1" tabindex="-1"></a>tib <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>( <span class="fu">matrix</span>( <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">ncol=</span><span class="dv">3</span> ) )</span></code></pre></div>
+<pre><code>## Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair`
+## is omitted as of tibble 2.0.0.
+## ℹ Using compatibility `.name_repair`.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="tidyverse.html#cb71-1" tabindex="-1"></a><span class="fu">colnames</span>(tib) <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;country&quot;</span>, <span class="st">&quot;1999&quot;</span>, <span class="st">&quot;2000&quot;</span> )</span>
+<span id="cb71-2"><a href="tidyverse.html#cb71-2" tabindex="-1"></a>tib<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;Afghanistan&quot;</span>, <span class="st">&quot;Brazil&quot;</span>, <span class="st">&quot;China&quot;</span> )</span>
+<span id="cb71-3"><a href="tidyverse.html#cb71-3" tabindex="-1"></a>tib<span class="sc">$</span><span class="st">&quot;1999&quot;</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">745</span>, <span class="dv">37737</span>, <span class="dv">212258</span>)</span>
+<span id="cb71-4"><a href="tidyverse.html#cb71-4" tabindex="-1"></a>tib<span class="sc">$</span><span class="st">&quot;2000&quot;</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2666</span>, <span class="dv">80488</span>, <span class="dv">213766</span>)</span>
+<span id="cb71-5"><a href="tidyverse.html#cb71-5" tabindex="-1"></a><span class="fu">print</span>( tib )</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
+##   country     `1999` `2000`
+##   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Afghanistan    745   2666
+## 2 Brazil       37737  80488
+## 3 China       212258 213766</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="tidyverse.html#cb73-1" tabindex="-1"></a><span class="do">## requires you to define which columns are values and not variables (the years 1999 and 2000, in our example), the name of the new column to move the column names to, and the name of the new column to move corresponding column values to</span></span>
+<span id="cb73-2"><a href="tidyverse.html#cb73-2" tabindex="-1"></a>tib <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="st">&quot;1999&quot;</span>, <span class="st">&quot;2000&quot;</span>), <span class="at">names_to =</span>          <span class="st">&quot;year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;cases&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   country     year   cases
+##   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;
+## 1 Afghanistan 1999     745
+## 2 Afghanistan 2000    2666
+## 3 Brazil      1999   37737
+## 4 Brazil      2000   80488
+## 5 China       1999  212258
+## 6 China       2000  213766</code></pre>
+<p><code>pivot_wider</code> example</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="tidyverse.html#cb75-1" tabindex="-1"></a><span class="fu">library</span>(vctrs)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;vctrs&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     data_frame</code></pre>
+<pre><code>## The following object is masked from &#39;package:tibble&#39;:
+## 
+##     data_frame</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="tidyverse.html#cb79-1" tabindex="-1"></a>tib <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>( <span class="fu">matrix</span>( <span class="at">nrow=</span><span class="dv">12</span>, <span class="at">ncol=</span><span class="dv">4</span> ) )</span>
+<span id="cb79-2"><a href="tidyverse.html#cb79-2" tabindex="-1"></a><span class="fu">colnames</span>(tib) <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;country&quot;</span>, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="st">&quot;count&quot;</span>      )</span>
+<span id="cb79-3"><a href="tidyverse.html#cb79-3" tabindex="-1"></a>tib<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">vec_rep_each</span>( <span class="fu">c</span>( <span class="st">&quot;Afghanistan&quot;</span>,      <span class="st">&quot;Brazil&quot;</span>, <span class="st">&quot;China&quot;</span> ), <span class="at">times=</span><span class="dv">4</span> )</span>
+<span id="cb79-4"><a href="tidyverse.html#cb79-4" tabindex="-1"></a>tib<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">vec_rep</span>( <span class="fu">c</span>( <span class="dv">1999</span>, <span class="dv">1999</span>, <span class="dv">2000</span>, <span class="dv">2000</span> ), <span class="at">times=</span><span class="dv">3</span> )</span>
+<span id="cb79-5"><a href="tidyverse.html#cb79-5" tabindex="-1"></a>tib<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">vec_rep</span>( <span class="fu">c</span>( <span class="st">&quot;cases&quot;</span>, <span class="st">&quot;population&quot;</span> ), <span class="at">times=</span><span class="dv">6</span> )</span>
+<span id="cb79-6"><a href="tidyverse.html#cb79-6" tabindex="-1"></a>tib<span class="sc">$</span>count <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="dv">745</span>, <span class="dv">19987071</span>, <span class="dv">2666</span>, <span class="dv">20595360</span>, <span class="dv">37737</span>, <span class="dv">172006362</span>, <span class="dv">80488</span>, <span class="dv">174504898</span>, <span class="dv">212258</span>, <span class="dv">127295272</span>, <span class="dv">213766</span>, <span class="dv">1280428583</span> )</span>
+<span id="cb79-7"><a href="tidyverse.html#cb79-7" tabindex="-1"></a><span class="fu">print</span>(tib)</span></code></pre></div>
+<pre><code>## # A tibble: 12 × 4
+##    country      year type            count
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+##  1 Afghanistan  1999 cases             745
+##  2 Afghanistan  1999 population   19987071
+##  3 Afghanistan  2000 cases            2666
+##  4 Afghanistan  2000 population   20595360
+##  5 Brazil       1999 cases           37737
+##  6 Brazil       1999 population  172006362
+##  7 Brazil       2000 cases           80488
+##  8 Brazil       2000 population  174504898
+##  9 China        1999 cases          212258
+## 10 China        1999 population  127295272
+## 11 China        2000 cases          213766
+## 12 China        2000 population 1280428583</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="tidyverse.html#cb81-1" tabindex="-1"></a><span class="do">## store type in single tibble row. provide the columns to take the new variable names from (type in the current tibble) and the column to take the corresponding values from (count)</span></span>
+<span id="cb81-2"><a href="tidyverse.html#cb81-2" tabindex="-1"></a>tib <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>( <span class="at">names_from =</span> <span class="st">&quot;type&quot;</span>,       <span class="at">values_from =</span> <span class="st">&quot;count&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 4
+##   country      year  cases population
+##   &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+## 1 Afghanistan  1999    745   19987071
+## 2 Afghanistan  2000   2666   20595360
+## 3 Brazil       1999  37737  172006362
+## 4 Brazil       2000  80488  174504898
+## 5 China        1999 212258  127295272
+## 6 China        2000 213766 1280428583</code></pre>
+</div>
+</div>
+<div id="data-manipulation" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data Manipulation<a href="tidyverse.html#data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="tidyverse.html#cb83-1" tabindex="-1"></a><span class="fu">print</span>(starwars)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 14
+##    name     height  mass hair_color skin_color eye_color birth_year sex   gender
+##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+##  1 Luke Sk…    172    77 blond      fair       blue            19   male  mascu…
+##  2 C-3PO       167    75 &lt;NA&gt;       gold       yellow         112   none  mascu…
+##  3 R2-D2        96    32 &lt;NA&gt;       white, bl… red             33   none  mascu…
+##  4 Darth V…    202   136 none       white      yellow          41.9 male  mascu…
+##  5 Leia Or…    150    49 brown      light      brown           19   fema… femin…
+##  6 Owen La…    178   120 brown, gr… light      blue            52   male  mascu…
+##  7 Beru Wh…    165    75 brown      light      blue            47   fema… femin…
+##  8 R5-D4        97    32 &lt;NA&gt;       white, red red             NA   none  mascu…
+##  9 Biggs D…    183    84 black      light      brown           24   male  mascu…
+## 10 Obi-Wan…    182    77 auburn, w… fair       blue-gray       57   male  mascu…
+## # ℹ 77 more rows
+## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<div id="rows" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Rows<a href="tidyverse.html#rows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>filter()</code>: Choose rows based on column values</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="tidyverse.html#cb85-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">filter</span>( skin_color<span class="sc">==</span><span class="st">&quot;light&quot;</span>, eye_color<span class="sc">==</span><span class="st">&quot;blue&quot;</span> ) )</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 14
+##   name      height  mass hair_color skin_color eye_color birth_year sex   gender
+##   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+## 1 Owen Lars    178   120 brown, gr… light      blue              52 male  mascu…
+## 2 Beru Whi…    165    75 brown      light      blue              47 fema… femin…
+## 3 Lobot        175    79 none       light      blue              37 male  mascu…
+## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<p><code>slice()</code>: choose rows based on location</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="tidyverse.html#cb87-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>) ) <span class="co"># Return rows 5-10 inclusive</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 14
+##   name      height  mass hair_color skin_color eye_color birth_year sex   gender
+##   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+## 1 Leia Org…    150    49 brown      light      brown             19 fema… femin…
+## 2 Owen Lars    178   120 brown, gr… light      blue              52 male  mascu…
+## 3 Beru Whi…    165    75 brown      light      blue              47 fema… femin…
+## 4 R5-D4         97    32 &lt;NA&gt;       white, red red               NA none  mascu…
+## 5 Biggs Da…    183    84 black      light      brown             24 male  mascu…
+## 6 Obi-Wan …    182    77 auburn, w… fair       blue-gray         57 male  mascu…
+## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<p><code>arrange()</code>: change row order</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="tidyverse.html#cb89-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">arrange</span>( height, mass ) ) <span class="co"># Sort rows by height, within height by mass</span></span></code></pre></div>
+<pre><code>## # A tibble: 87 × 14
+##    name     height  mass hair_color skin_color eye_color birth_year sex   gender
+##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+##  1 Yoda         66    17 white      green      brown            896 male  mascu…
+##  2 Ratts T…     79    15 none       grey, blue unknown           NA male  mascu…
+##  3 Wicket …     88    20 brown      brown      brown              8 male  mascu…
+##  4 Dud Bolt     94    45 none       blue, grey yellow            NA male  mascu…
+##  5 R2-D2        96    32 &lt;NA&gt;       white, bl… red               33 none  mascu…
+##  6 R4-P17       96    NA none       silver, r… red, blue         NA none  femin…
+##  7 R5-D4        97    32 &lt;NA&gt;       white, red red               NA none  mascu…
+##  8 Sebulba     112    40 none       grey, red  orange            NA male  mascu…
+##  9 Gasgano     122    NA none       white, bl… black             NA male  mascu…
+## 10 Watto       137    NA black      blue, grey yellow            NA male  mascu…
+## # ℹ 77 more rows
+## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+</div>
+<div id="columns" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Columns<a href="tidyverse.html#columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>select()</code>: chooses a subset of columns</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="tidyverse.html#cb91-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">select</span>( name, hair_color, eye_color ) ) <span class="co"># Select name, hair colour, eye colour columns</span></span></code></pre></div>
+<pre><code>## # A tibble: 87 × 3
+##    name               hair_color    eye_color
+##    &lt;chr&gt;              &lt;chr&gt;         &lt;chr&gt;    
+##  1 Luke Skywalker     blond         blue     
+##  2 C-3PO              &lt;NA&gt;          yellow   
+##  3 R2-D2              &lt;NA&gt;          red      
+##  4 Darth Vader        none          yellow   
+##  5 Leia Organa        brown         brown    
+##  6 Owen Lars          brown, grey   blue     
+##  7 Beru Whitesun Lars brown         blue     
+##  8 R5-D4              &lt;NA&gt;          red      
+##  9 Biggs Darklighter  black         brown    
+## 10 Obi-Wan Kenobi     auburn, white blue-gray
+## # ℹ 77 more rows</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="tidyverse.html#cb93-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">select</span>( name<span class="sc">:</span>eye_color ) ) <span class="co"># Select columns from name to eye colour</span></span></code></pre></div>
+<pre><code>## # A tibble: 87 × 6
+##    name               height  mass hair_color    skin_color  eye_color
+##    &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    
+##  1 Luke Skywalker        172    77 blond         fair        blue     
+##  2 C-3PO                 167    75 &lt;NA&gt;          gold        yellow   
+##  3 R2-D2                  96    32 &lt;NA&gt;          white, blue red      
+##  4 Darth Vader           202   136 none          white       yellow   
+##  5 Leia Organa           150    49 brown         light       brown    
+##  6 Owen Lars             178   120 brown, grey   light       blue     
+##  7 Beru Whitesun Lars    165    75 brown         light       blue     
+##  8 R5-D4                  97    32 &lt;NA&gt;          white, red  red      
+##  9 Biggs Darklighter     183    84 black         light       brown    
+## 10 Obi-Wan Kenobi        182    77 auburn, white fair        blue-gray
+## # ℹ 77 more rows</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="tidyverse.html#cb95-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">select</span>( <span class="fu">ends_with</span>( <span class="st">&quot;color&quot;</span> ) ) ) <span class="co"># Selects columns whose name ends w/color</span></span></code></pre></div>
+<pre><code>## # A tibble: 87 × 3
+##    hair_color    skin_color  eye_color
+##    &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    
+##  1 blond         fair        blue     
+##  2 &lt;NA&gt;          gold        yellow   
+##  3 &lt;NA&gt;          white, blue red      
+##  4 none          white       yellow   
+##  5 brown         light       brown    
+##  6 brown, grey   light       blue     
+##  7 brown         light       blue     
+##  8 &lt;NA&gt;          white, red  red      
+##  9 black         light       brown    
+## 10 auburn, white fair        blue-gray
+## # ℹ 77 more rows</code></pre>
+<p><code>rename()</code>: Renames a column.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="tidyverse.html#cb97-1" tabindex="-1"></a><span class="fu">print</span>( starwars <span class="sc">%&gt;%</span> <span class="fu">rename</span>( <span class="st">&quot;Home.World&quot;</span><span class="ot">=</span><span class="st">&quot;homeworld&quot;</span> ) ) <span class="co"># Rename homeworld column to Home.World</span></span></code></pre></div>
+<pre><code>## # A tibble: 87 × 14
+##    name     height  mass hair_color skin_color eye_color birth_year sex   gender
+##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+##  1 Luke Sk…    172    77 blond      fair       blue            19   male  mascu…
+##  2 C-3PO       167    75 &lt;NA&gt;       gold       yellow         112   none  mascu…
+##  3 R2-D2        96    32 &lt;NA&gt;       white, bl… red             33   none  mascu…
+##  4 Darth V…    202   136 none       white      yellow          41.9 male  mascu…
+##  5 Leia Or…    150    49 brown      light      brown           19   fema… femin…
+##  6 Owen La…    178   120 brown, gr… light      blue            52   male  mascu…
+##  7 Beru Wh…    165    75 brown      light      blue            47   fema… femin…
+##  8 R5-D4        97    32 &lt;NA&gt;       white, red red             NA   none  mascu…
+##  9 Biggs D…    183    84 black      light      brown           24   male  mascu…
+## 10 Obi-Wan…    182    77 auburn, w… fair       blue-gray       57   male  mascu…
+## # ℹ 77 more rows
+## # ℹ 5 more variables: Home.World &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<p><code>mutate()</code>: Changes the values of a column or creates new column(s).</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="tidyverse.html#cb99-1" tabindex="-1"></a><span class="fu">print</span>(starwars <span class="sc">%&gt;%</span></span>
+<span id="cb99-2"><a href="tidyverse.html#cb99-2" tabindex="-1"></a><span class="fu">mutate</span>( <span class="at">height_m =</span> height <span class="sc">/</span> <span class="dv">100</span>, <span class="at">BMI =</span> mass <span class="sc">/</span> ( height_m <span class="sc">^</span> <span class="dv">2</span> ) ) <span class="sc">%&gt;%</span></span>
+<span id="cb99-3"><a href="tidyverse.html#cb99-3" tabindex="-1"></a><span class="fu">select</span>( BMI, height_m, <span class="fu">everything</span>() ))</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 16
+##      BMI height_m name   height  mass hair_color skin_color eye_color birth_year
+##    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+##  1  26.0     1.72 Luke …    172    77 blond      fair       blue            19  
+##  2  26.9     1.67 C-3PO     167    75 &lt;NA&gt;       gold       yellow         112  
+##  3  34.7     0.96 R2-D2      96    32 &lt;NA&gt;       white, bl… red             33  
+##  4  33.3     2.02 Darth…    202   136 none       white      yellow          41.9
+##  5  21.8     1.5  Leia …    150    49 brown      light      brown           19  
+##  6  37.9     1.78 Owen …    178   120 brown, gr… light      blue            52  
+##  7  27.5     1.65 Beru …    165    75 brown      light      blue            47  
+##  8  34.0     0.97 R5-D4      97    32 &lt;NA&gt;       white, red red             NA  
+##  9  25.1     1.83 Biggs…    183    84 black      light      brown           24  
+## 10  23.2     1.82 Obi-W…    182    77 auburn, w… fair       blue-gray       57  
+## # ℹ 77 more rows
+## # ℹ 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;, homeworld &lt;chr&gt;, species &lt;chr&gt;,
+## #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<p><code>relocate()</code>: Changes the order or columns.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="tidyverse.html#cb101-1" tabindex="-1"></a><span class="fu">print</span>(starwars <span class="sc">%&gt;%</span></span>
+<span id="cb101-2"><a href="tidyverse.html#cb101-2" tabindex="-1"></a><span class="fu">relocate</span>( sex<span class="sc">:</span>homeworld, <span class="at">.before=</span>height ))</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 14
+##    name      sex   gender homeworld height  mass hair_color skin_color eye_color
+##    &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;    
+##  1 Luke Sky… male  mascu… Tatooine     172    77 blond      fair       blue     
+##  2 C-3PO     none  mascu… Tatooine     167    75 &lt;NA&gt;       gold       yellow   
+##  3 R2-D2     none  mascu… Naboo         96    32 &lt;NA&gt;       white, bl… red      
+##  4 Darth Va… male  mascu… Tatooine     202   136 none       white      yellow   
+##  5 Leia Org… fema… femin… Alderaan     150    49 brown      light      brown    
+##  6 Owen Lars male  mascu… Tatooine     178   120 brown, gr… light      blue     
+##  7 Beru Whi… fema… femin… Tatooine     165    75 brown      light      blue     
+##  8 R5-D4     none  mascu… Tatooine      97    32 &lt;NA&gt;       white, red red      
+##  9 Biggs Da… male  mascu… Tatooine     183    84 black      light      brown    
+## 10 Obi-Wan … male  mascu… Stewjon      182    77 auburn, w… fair       blue-gray
+## # ℹ 77 more rows
+## # ℹ 5 more variables: birth_year &lt;dbl&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+</div>
+<div id="grouping" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Grouping<a href="tidyverse.html#grouping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>summarise()</code>: collapse a group of rows into single row</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="tidyverse.html#cb103-1" tabindex="-1"></a><span class="fu">print</span>(starwars <span class="sc">%&gt;%</span></span>
+<span id="cb103-2"><a href="tidyverse.html#cb103-2" tabindex="-1"></a><span class="fu">group_by</span>( species, sex ) <span class="sc">%&gt;%</span></span>
+<span id="cb103-3"><a href="tidyverse.html#cb103-3" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">summarise</span>( <span class="at">height=</span><span class="fu">mean</span>(height, <span class="at">na.rm=</span><span class="cn">TRUE</span> ), <span class="at">mass=</span><span class="fu">mean</span>(mass, <span class="at">na.rm=</span><span class="cn">TRUE</span>) ) <span class="sc">%&gt;%</span></span>
+<span id="cb103-4"><a href="tidyverse.html#cb103-4" tabindex="-1"></a><span class="fu">select</span>( height, mass ))</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;species&#39;. You can override using the `.groups`
+## argument.
+## Adding missing grouping variables: `species`</code></pre>
+<pre><code>## # A tibble: 41 × 3
+## # Groups:   species [38]
+##    species   height  mass
+##    &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+##  1 Aleena       79   15  
+##  2 Besalisk    198  102  
+##  3 Cerean      198   82  
+##  4 Chagrian    196  NaN  
+##  5 Clawdite    168   55  
+##  6 Droid       131.  69.8
+##  7 Dug         112   40  
+##  8 Ewok         88   20  
+##  9 Geonosian   183   80  
+## 10 Gungan      209.  74  
+## # ℹ 31 more rows</code></pre>
+</div>
+<div id="section" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> </h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-processes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/lkmcl/R_Reference/edit/main/02-tears.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/lkmcl/R_Reference/blob/main/02-tears.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
